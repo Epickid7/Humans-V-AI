@@ -68,7 +68,7 @@ However, there were some complications where Visual Studio was reluctant to buil
 ### Reminders For the Assignment
 *Read the assignment ***multiple*** times*. Ensure you comply with all requirements.
 
-Git is not a requirement, but a suggestion. This will allow you to collaborate without much issue.
+Git is not a requirement, but a suggestion. This will allow you to collaborate without much issue. *If you choose to use git, please ensure your repo is **private** during development.*
 
 Have fun with this project! It does not need to be a game; it could a utility application or anything including a
 Graphical User Interface. Try to pick a project which you want to showcase on your resume.
