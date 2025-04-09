@@ -40,6 +40,8 @@ use `<br>` to insert a new line.
 
 [GitHub Desktop Download](https://desktop.github.com/download/) (GUI Git Client Linux, Windows, macOS)
 
+[Create a .gitignore file](https://www.toptal.com/developers/gitignore) (Generates gitignore. Simply save the file to your repo as .gitignore) 
+
 To share the repo with groupmates:
 1. Navigate to your repo on GitHub
 2. Click Settings
