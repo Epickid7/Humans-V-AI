@@ -18,7 +18,7 @@ FetchContent_MakeAvailable(SFML)
 add_executable(SFML_Ex
         main.cpp
         src/Utilities.cpp
-)
+ "src/Laser.h")
 
 target_link_libraries(SFML_Ex
         SFML::System # Required

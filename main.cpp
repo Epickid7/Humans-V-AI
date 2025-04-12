@@ -38,6 +38,7 @@ int main()
         window.clear();
 
         // Draw the sprite
+        
 
         // Draw the string
         window.draw(text);
