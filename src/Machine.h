@@ -6,12 +6,12 @@
 #include <SFML/Graphics/RectangleShape.hpp>
 
 // 
-class Machine : public RectangleShape 
+class Machine : public sf::RectangleShape
 {
 public:
-	Machine() : RectangleShape() {
-
-	}
+	Machine(sf::Vector2f size) : RectangleShape(size) {
+		
+	} 
 private:
-
+	
 };
