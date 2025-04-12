@@ -2,10 +2,10 @@
 ## Team `<NAME>`
 | Team Member | Lab Section | Role       | Responsibilities |
 |-------------|-------------|------------|------------------|
-|Jacob Parnell| 1           | Backend    | Implement ...    |
-| Ian Van De Bogert    | 2           | Frontend   | Animated ...     |
-| Jayren Calub   | ?           | Networking | Enable ...       |
-| Parker Mulroy   | ?           | Networking | Enable ...       |
+|Jacob Parnell| 1           | ?    | Implement ...    |
+| Ian Van De Bogert    | 2           | ?   | Animated ...     |
+| Jayren Calub   | ?           | TBD | Enable ...       |
+| Parker Mulroy   | ?           | TBD | Enable ...       |
 
 ## Tools Used
 - SFML (API)
