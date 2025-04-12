@@ -7,6 +7,7 @@
 
 // Include my headers
 #include "src/Utilities.h"
+#include "src/Machine.h"
 
 // Modified code from SFML's website
 
@@ -17,11 +18,13 @@ int main()
 
     // Create a graphical text to display
     const sf::Font font = Utilities::getAttributedFont(FontStyle::SemiBoldItalic, "SF-Pro");
-    sf::Text text(font, "Hello SFML", 50);
+    sf::Text text(font, "Humans v AI", 50);
 
     // Create a second text, near the center of the screen
-    sf::Text text2(font, "Hello SFML", 50);
+    sf::Text text2(font, "Electric boogaloo", 50);
     text2.setPosition(sf::Vector2f(300, 300));
+
+    Machine m(sf::Vector2f(window.getSize().x/20,window.getSize().y/10),sf::Vector2f(window.getSize().x +100, window.getSize().y + 500));
 
     // Start the game loop
     while (window.isOpen())
@@ -43,6 +46,10 @@ int main()
         // Draw the string
         window.draw(text);
         window.draw(text2);
+
+        //Draw 'Machine'
+        window.draw(m);
+        m.move(m.getPosition());
 
         // Update the window
         window.display();
