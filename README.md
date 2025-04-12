@@ -2,13 +2,13 @@
 ## Team `<NAME>`
 | Team Member | Lab Section | Role       | Responsibilities |
 |-------------|-------------|------------|------------------|
-| Person      | 3           | Backend    | Implement ...    |
+|Jacob Parnell| 1           | Backend    | Implement ...    |
 | Person 2    | 2           | Frontend   | Animated ...     |
 | Person 3    | 1           | Networking | Enable ...       |
 
 ## Tools Used
 - SFML (API)
-- CLion (IDE)
+- Visual Studio (IDE)
 - What else?
 
 ## How to Run and Install
