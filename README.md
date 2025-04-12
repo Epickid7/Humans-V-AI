@@ -3,7 +3,7 @@
 | Team Member | Lab Section | Role       | Responsibilities |
 |-------------|-------------|------------|------------------|
 |Jacob Parnell| 1           | Backend    | Implement ...    |
-| Person 2    | 2           | Frontend   | Animated ...     |
+| Ian    | 2           | Frontend   | Animated ...     |
 | Person 3    | 1           | Networking | Enable ...       |
 
 ## Tools Used
