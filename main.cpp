@@ -9,12 +9,18 @@
 #include "src/Utilities.h"
 #include "src/Machine.h"
 
+// Needed to maximize the screen on launch
+#include <Windows.h>
+
 // Modified code from SFML's website
 
 int main()
 {
     // Create the main window
     sf::RenderWindow window(sf::VideoMode({800, 600}), "SFML window");
+
+    //Maximize window??
+    ::ShowWindow(window.getNativeHandle(), SW_MAXIMIZE);
 
     // Create a graphical text to display
     const sf::Font font = Utilities::getAttributedFont(FontStyle::SemiBoldItalic, "SF-Pro");
@@ -25,6 +31,9 @@ int main()
     text2.setPosition(sf::Vector2f(300, 300));
 
     Machine m(sf::Vector2f(window.getSize().x/20,window.getSize().y/10),sf::Vector2f(window.getSize().x +100, window.getSize().y + 500));
+
+    
+    
 
     // Start the game loop
     while (window.isOpen())
