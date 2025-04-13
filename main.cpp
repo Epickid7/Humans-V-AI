@@ -25,6 +25,8 @@ int main()
     text2.setPosition(sf::Vector2f(300, 300));
 
     Machine m(sf::Vector2f(window.getSize().x/20,window.getSize().y/10),sf::Vector2f(window.getSize().x +100, window.getSize().y + 500));
+    Machine m2(sf::Vector2f(window.getSize().x / 20, window.getSize().y / 10), sf::Vector2f(window.getSize().x + 100, window.getSize().y + 500));
+
 
     // Start the game loop
     while (window.isOpen())
@@ -49,7 +51,9 @@ int main()
 
         //Draw 'Machine'
         window.draw(m);
+        window.draw(m2);
         m.move(sf::Vector2f(.01,.01));
+        m2.move(sf::Vector2f(.02, .01));
 
         // Update the window
         window.display();
