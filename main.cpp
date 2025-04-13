@@ -49,7 +49,7 @@ int main()
 
         //Draw 'Machine'
         window.draw(m);
-        m.move(m.getPosition());
+        m.move(sf::Vector2f(.01,.01));
 
         // Update the window
         window.display();
