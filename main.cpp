@@ -26,6 +26,8 @@ int main()
 
     Machine m(sf::Vector2f(window.getSize().x/20,window.getSize().y/10),sf::Vector2f(window.getSize().x +100, window.getSize().y + 500));
 
+    sf::Keyboard::Key k(sf::Keyboard::Key::S);
+
     // Start the game loop
     while (window.isOpen())
     {
@@ -49,7 +51,9 @@ int main()
 
         //Draw 'Machine'
         window.draw(m);
-        m.move(sf::Vector2f(.01,.01));
+        //if () {
+            m.move(sf::Vector2f(.01, .01));
+        //}
 
         // Update the window
         window.display();
