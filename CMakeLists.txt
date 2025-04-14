@@ -18,7 +18,7 @@ FetchContent_MakeAvailable(SFML)
 add_executable(SFML_Ex
         main.cpp
         src/Utilities.cpp
- "src/Machine.h")
+ "src/Machine.h" "src/Grid.cpp")
 
 target_link_libraries(SFML_Ex
         SFML::System # Required

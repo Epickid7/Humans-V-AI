@@ -28,6 +28,8 @@ int main()
     Machine m2(sf::Vector2f(window.getSize().x / 20, window.getSize().y / 10), sf::Vector2f(window.getSize().x + 100, window.getSize().y + 500));
 
 
+    sf::Keyboard::Key k(sf::Keyboard::Key::S);
+
     // Start the game loop
     while (window.isOpen())
     {
