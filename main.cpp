@@ -44,7 +44,7 @@ int main()
         window.clear();
 
         //get clock time for mob queue
-        clk.getElapsedTime();
+        //clk.getElapsedTime();
         
 
         // Draw the string
