@@ -1,4 +1,5 @@
 #pragma once
+#include "../Machine.h"
 
 #include <iostream>
 #include <string>
@@ -16,6 +17,8 @@ public:
 	~MobQueue();
 
 	void loadFromLevelFile(std::string file);
+	Machine getMachineType(std::string machineAbrv);
+
 private:
 	std::queue<string> mQueue;
 	

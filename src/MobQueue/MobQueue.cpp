@@ -30,3 +30,9 @@ void MobQueue::loadFromLevelFile(std::string file)
 	}
 	
 }
+
+Machine MobQueue::getMachineType(std::string machineAbrv)
+{
+
+	return ;
+}
