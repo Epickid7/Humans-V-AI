@@ -18,14 +18,10 @@ FetchContent_MakeAvailable(SFML)
 add_executable(SFML_Ex
         main.cpp
         src/Utilities.cpp
-<<<<<<< HEAD
-
- "src/ian.h" "src/Machine.cpp")
-=======
+        "src/ian.h" "src/Machine.cpp"
         src/Grid/Grid.cpp "src/MobQueue/MobQueue.h"
         src/MobQueue/MobQueue.cpp
 )
->>>>>>> origin/dev
 
 target_link_libraries(SFML_Ex
         SFML::System # Required
