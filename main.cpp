@@ -49,7 +49,7 @@ int main()
 
         // Draw the string
         window.draw(text);
-        window.draw(text2);
+        
 
         //Draw 'Machine'
         window.draw(m);
