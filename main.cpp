@@ -8,6 +8,7 @@
 // Include my headers
 #include "src/Utilities.h"
 #include "src/Machine.h"
+#include "src/Grid/Grid.hpp"
 
 // Modified code from SFML's website
 
@@ -20,13 +21,12 @@ int main()
     const sf::Font font = Utilities::getAttributedFont(FontStyle::SemiBoldItalic, "SF-Pro");
     sf::Text text(font, "Humans v AI", 50);
 
-    // Create a second text, near the center of the screen
-    sf::Text text2(font, "Electric boogaloo", 50);
-    text2.setPosition(sf::Vector2f(300, 300));
 
     Machine m(sf::Vector2f(window.getSize().x/20,window.getSize().y/10),sf::Vector2f(window.getSize().x +100, window.getSize().y + 500));
     Machine m2(sf::Vector2f(window.getSize().x / 20, window.getSize().y / 10), sf::Vector2f(window.getSize().x + 100, window.getSize().y + 500));
 
+    //figure out how to declare Grid
+    //Grid gameBoard();
 
     sf::Keyboard::Key k(sf::Keyboard::Key::S);
 
@@ -54,6 +54,7 @@ int main()
         //Draw 'Machine'
         window.draw(m);
         window.draw(m2);
+        
         m.move(sf::Vector2f(.01,.01));
         m2.move(sf::Vector2f(.02, .01));
 

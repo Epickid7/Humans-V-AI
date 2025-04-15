@@ -17,7 +17,9 @@ class Grid : public sf::Sprite
 	
 public:
 	Grid(sf::Vector2f size, sf::Vector2f pos, sf::Vector2f square_width, const sf::Texture& texture) : Sprite(texture) {
-		
+		this->size = size;
+		this->pos = pos;
+		this->square_width = square_width;
 	}
 
 	
@@ -27,6 +29,7 @@ private:
 	//window_heighth - offset (if any) % grid width (row number)
 	sf::Vector2f size;
 	sf::Vector2f pos;
+	sf::Vector2f square_width;
 	
 	
 };
