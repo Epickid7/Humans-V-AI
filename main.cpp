@@ -10,18 +10,17 @@
 #include "src/Machine.h"
 #include "src/Grid/Grid.hpp"
 
-// Modified code from SFML's website
+
 
 int main()
 {
     // Create the main window
     sf::RenderWindow window(sf::VideoMode({800, 600}), "SFML window");
 
-    // Create a graphical text to display
-    /*const sf::Font font = Utilities::getAttributedFont(FontStyle::SemiBoldItalic, "SF-Pro");
-    sf::Text text(font, "Humans v AI", 50);*/
+    
+    sf::Clock clk;
 
-
+    //test machines
     Machine m(sf::Vector2f(window.getSize().x/20,window.getSize().y/10),sf::Vector2f(window.getSize().x +100, window.getSize().y/2));
     Machine m2(sf::Vector2f(window.getSize().x / 20, window.getSize().y / 10), sf::Vector2f(window.getSize().x + 100, window.getSize().y/2));
 
@@ -44,7 +43,8 @@ int main()
         // Clear screen
         window.clear();
 
-        // Draw the sprite
+        //get clock time for mob queue
+        clk.getElapsedTime();
         
 
         // Draw the string
