@@ -2,13 +2,14 @@
 ## Team `<NAME>`
 | Team Member | Lab Section | Role       | Responsibilities |
 |-------------|-------------|------------|------------------|
-| Person      | 3           | Backend    | Implement ...    |
-| Person 2    | 2           | Frontend   | Animated ...     |
-| Person 3    | 1           | Networking | Enable ...       |
+|Jacob Parnell| 1           | ?    | Implement ...    |
+| Ian Van De Bogert    | 2           | ?   | Animated ...     |
+| Jayren Calub   | ?           | TBD | Enable ...       |
+| Parker Mulroy   | ?           | TBD | Enable ...       |
 
 ## Tools Used
 - SFML (API)
-- CLion (IDE)
+- Visual Studio (IDE)
 - What else?
 
 ## How to Run and Install
@@ -42,12 +43,6 @@ use `<br>` to insert a new line.
 
 [Create a .gitignore file](https://www.toptal.com/developers/gitignore) (Generates gitignore. Simply save the file to your repo as .gitignore) 
 
-To share the repo with groupmates:
-1. Navigate to your repo on GitHub
-2. Click Settings
-3. In the left column, select "Collaborators"
-4. In the right column, click "Add People"
-5. Type all your groupmate's username
 
 ### Troubleshooting
 #### Long Build Time

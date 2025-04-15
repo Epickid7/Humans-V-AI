@@ -7,21 +7,31 @@
 
 // Include my headers
 #include "src/Utilities.h"
+#include "src/Machine.h"
+#include "src/Grid/Grid.hpp"
+#include "src/MobQueue/MobQueue.h"
 
-// Modified code from SFML's website
+
 
 int main()
 {
     // Create the main window
     sf::RenderWindow window(sf::VideoMode({800, 600}), "SFML window");
 
-    // Create a graphical text to display
-    const sf::Font font = Utilities::getAttributedFont(FontStyle::SemiBoldItalic, "SF-Pro");
-    sf::Text text(font, "Hello SFML", 50);
+    
+    sf::Clock clk;
 
-    // Create a second text, near the center of the screen
-    sf::Text text2(font, "Hello SFML", 50);
-    text2.setPosition(sf::Vector2f(300, 300));
+    /*MobQueue mobs;
+    mobs.loadFromLevelFile("../MobList/LevelOne.csv");*/
+
+    //test machines
+    Machine m(sf::Vector2f(window.getSize().x/20,window.getSize().y/10),sf::Vector2f(window.getSize().x +100, window.getSize().y/2));
+    Machine m2(sf::Vector2f(window.getSize().x / 20, window.getSize().y / 10), sf::Vector2f(window.getSize().x + 100, window.getSize().y/2));
+
+    //figure out how to declare Grid
+    //Grid gameBoard();
+
+    sf::Keyboard::Key k(sf::Keyboard::Key::S);
 
     // Start the game loop
     while (window.isOpen())
@@ -37,11 +47,24 @@ int main()
         // Clear screen
         window.clear();
 
-        // Draw the sprite
+        //get clock time for mob queue
+        
+        //will spawn every ten seconds
+        if (clk.getElapsedTime().asMilliseconds() % 10000 == 0) {
+            //mobs.getMachineType();
+        }
+
 
         // Draw the string
-        window.draw(text);
-        window.draw(text2);
+        //window.draw(text);
+        
+
+        //Draw 'Machine'
+        window.draw(m);
+        window.draw(m2);
+        
+        m.move(sf::Vector2f(-.01,0));
+        m2.move(sf::Vector2f(-.02, 0));
 
         // Update the window
         window.display();
