@@ -27,6 +27,8 @@ void MobQueue::loadFromLevelFile(std::string file)
 			this->mQueue.push(line);
 		}
 		getline(input, line, '\n');
+		this->mQueue.push(line);
+		//get another line?
 	}
 	
 }

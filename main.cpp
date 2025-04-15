@@ -21,8 +21,8 @@ int main()
     
     sf::Clock clk;
 
-   /* MobQueue mobs;
-    mobs.loadFromLevelFile("src/MobList/LevelOne.csv");*/
+    /*MobQueue mobs;
+    mobs.loadFromLevelFile("../MobList/LevelOne.csv");*/
 
     //test machines
     Machine m(sf::Vector2f(window.getSize().x/20,window.getSize().y/10),sf::Vector2f(window.getSize().x +100, window.getSize().y/2));
