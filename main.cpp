@@ -18,12 +18,12 @@ int main()
     sf::RenderWindow window(sf::VideoMode({800, 600}), "SFML window");
 
     // Create a graphical text to display
-    const sf::Font font = Utilities::getAttributedFont(FontStyle::SemiBoldItalic, "SF-Pro");
-    sf::Text text(font, "Humans v AI", 50);
+    /*const sf::Font font = Utilities::getAttributedFont(FontStyle::SemiBoldItalic, "SF-Pro");
+    sf::Text text(font, "Humans v AI", 50);*/
 
 
-    Machine m(sf::Vector2f(window.getSize().x/20,window.getSize().y/10),sf::Vector2f(window.getSize().x +100, window.getSize().y + 500));
-    Machine m2(sf::Vector2f(window.getSize().x / 20, window.getSize().y / 10), sf::Vector2f(window.getSize().x + 100, window.getSize().y + 500));
+    Machine m(sf::Vector2f(window.getSize().x/20,window.getSize().y/10),sf::Vector2f(window.getSize().x +100, window.getSize().y/2));
+    Machine m2(sf::Vector2f(window.getSize().x / 20, window.getSize().y / 10), sf::Vector2f(window.getSize().x + 100, window.getSize().y/2));
 
     //figure out how to declare Grid
     //Grid gameBoard();
@@ -48,15 +48,15 @@ int main()
         
 
         // Draw the string
-        window.draw(text);
+        //window.draw(text);
         
 
         //Draw 'Machine'
         window.draw(m);
         window.draw(m2);
         
-        m.move(sf::Vector2f(.01,.01));
-        m2.move(sf::Vector2f(.02, .01));
+        m.move(sf::Vector2f(-.01,0));
+        m2.move(sf::Vector2f(-.02, 0));
 
         // Update the window
         window.display();
