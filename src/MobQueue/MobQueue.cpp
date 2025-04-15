@@ -12,7 +12,7 @@ MobQueue::~MobQueue()
 void MobQueue::loadFromLevelFile(std::string file)
 {
 	std::fstream input;
-	input.open("LevelOne.csv", std::ios::in);
+	input.open(file, std::ios::in);
 
 	string line;
 	
@@ -30,9 +30,12 @@ void MobQueue::loadFromLevelFile(std::string file)
 	}
 	
 }
-
-Machine MobQueue::getMachineType(std::string machineAbrv)
-{
-
-	return ;
-}
+//
+//Machine MobQueue::getMachineType(std::string machineAbrv)
+//{
+//	Machine m;
+//	if (machineAbrv == "TR") {
+//		//return 
+//	}
+//	return ;
+//}

@@ -15,6 +15,8 @@ public:
 	Machine(sf::Vector2f size, sf::Vector2f pos) : RectangleShape(size) {
 		this->setPosition(pos);
 	} 
+
+	//Machine();
 private:
 	
 };

@@ -17,7 +17,7 @@ public:
 	~MobQueue();
 
 	void loadFromLevelFile(std::string file);
-	Machine getMachineType(std::string machineAbrv);
+	/*Machine getMachineType(std::string machineAbrv);*/
 
 private:
 	std::queue<string> mQueue;

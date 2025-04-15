@@ -9,6 +9,7 @@
 #include "src/Utilities.h"
 #include "src/Machine.h"
 #include "src/Grid/Grid.hpp"
+#include "src/MobQueue/MobQueue.h"
 
 
 
@@ -19,6 +20,9 @@ int main()
 
     
     sf::Clock clk;
+
+   /* MobQueue mobs;
+    mobs.loadFromLevelFile("src/MobList/LevelOne.csv");*/
 
     //test machines
     Machine m(sf::Vector2f(window.getSize().x/20,window.getSize().y/10),sf::Vector2f(window.getSize().x +100, window.getSize().y/2));
@@ -44,8 +48,12 @@ int main()
         window.clear();
 
         //get clock time for mob queue
-        //clk.getElapsedTime();
         
+        //will spawn every ten seconds
+        if (clk.getElapsedTime().asMilliseconds() % 10000 == 0) {
+            //mobs.getMachineType();
+        }
+
 
         // Draw the string
         //window.draw(text);
