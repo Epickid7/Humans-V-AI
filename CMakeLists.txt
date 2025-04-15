@@ -18,7 +18,7 @@ FetchContent_MakeAvailable(SFML)
 add_executable(SFML_Ex
         main.cpp
         src/Utilities.cpp
-        src/Grid/Grid.cpp)
+        src/Grid/Grid.cpp "src/MobQueue/MobQueue.h")
 
 target_link_libraries(SFML_Ex
         SFML::System # Required
