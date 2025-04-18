@@ -7,7 +7,7 @@
 #include <SFML/Graphics/RectangleShape.hpp>
 #include <SFML/Graphics/Sprite.hpp>
 
-class Character : public sf::RectangleShape { // RectangleShape or Sprite?
+class Character : public sf::Sprite {
 protected:
 	double hp, damage, attackSpeed;
 	string ability;
