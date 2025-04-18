@@ -12,6 +12,10 @@
 #include "src/MobQueue/MobQueue.h"
 
 
+// Needed to maximize the screen on launch
+#include <Windows.h>
+
+// Modified code from SFML's website
 
 int main()
 {
@@ -20,6 +24,12 @@ int main()
 
     
     sf::Clock clk;
+    //Maximize window??
+    ::ShowWindow(window.getNativeHandle(), SW_MAXIMIZE);
+
+    // Create a graphical text to display
+    const sf::Font font = Utilities::getAttributedFont(FontStyle::SemiBoldItalic, "SF-Pro");
+    sf::Text text(font, "Humans v AI", 50);
 
     /*MobQueue mobs;
     mobs.loadFromLevelFile("../MobList/LevelOne.csv");*/
@@ -35,6 +45,9 @@ int main()
     //Grid gameBoard();
 
     sf::Keyboard::Key k(sf::Keyboard::Key::S);
+
+    
+    
 
     // Start the game loop
     while (window.isOpen())
