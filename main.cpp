@@ -7,8 +7,8 @@
 
 // Include my headers
 #include "src/Utilities.h"
-#include "src/Machine.h"
 #include "src/Grid/Grid.hpp"
+#include "src/Machine.hpp"
 #include "src/MobQueue/MobQueue.h"
 
 
@@ -25,8 +25,8 @@ int main()
     mobs.loadFromLevelFile("../MobList/LevelOne.csv");*/
 
     //test machines
-    Machine m(sf::Vector2f(window.getSize().x/20,window.getSize().y/10),sf::Vector2f(window.getSize().x +100, window.getSize().y/2));
-    Machine m2(sf::Vector2f(window.getSize().x / 20, window.getSize().y / 10), sf::Vector2f(window.getSize().x + 100, window.getSize().y/2));
+    //Machine m(sf::Vector2f(window.getSize().x/20,window.getSize().y/10),sf::Vector2f(window.getSize().x +100, window.getSize().y/2));
+    //Machine m2(sf::Vector2f(window.getSize().x / 20, window.getSize().y / 10), sf::Vector2f(window.getSize().x + 100, window.getSize().y/2));
 
     //test texture
     //sf::Texture t("assets/images/Jacob_Parnell_(LeKOBE)_the_kingdom_of_God_1ec41887-eaea-4609-922d-d2d0b6e5e0c9.png");
@@ -63,11 +63,11 @@ int main()
         
 
         //Draw 'Machine'
-        window.draw(m);
-        window.draw(m2);
+        //window.draw(m);
+        //window.draw(m2);
         
-        m.move(sf::Vector2f(-.01,0));
-        m2.move(sf::Vector2f(-.02, 0));
+        //m.move(sf::Vector2f(-.01,0));
+        //m2.move(sf::Vector2f(-.02, 0));
 
         // Update the window
         window.display();
