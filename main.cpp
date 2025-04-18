@@ -42,7 +42,12 @@ int main()
     //sf::Texture t("assets/images/Jacob_Parnell_(LeKOBE)_the_kingdom_of_God_1ec41887-eaea-4609-922d-d2d0b6e5e0c9.png");
     
     //figure out how to declare Grid
-    //Grid gameBoard();
+    // loop to declare grid tiles
+    for (int i = 0; i < 5; i++) {
+        for (int j = 0; j < 10; j++) {
+
+        }
+    }
 
     sf::Keyboard::Key k(sf::Keyboard::Key::S);
 
