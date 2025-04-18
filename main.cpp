@@ -65,6 +65,7 @@ int main()
 
         //get clock time for mob queue
         
+
         //will spawn every ten seconds
         if (clk.getElapsedTime().asMilliseconds() % 10000 == 0) {
             //mobs.getMachineType();
