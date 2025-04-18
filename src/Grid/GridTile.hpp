@@ -8,15 +8,18 @@
 #include <SFML/Graphics/RectangleShape.hpp>
 
 // 
-class Grid_Tile : public sf::Sprite
+class GridTile : public sf::Sprite
 {
 
 public:
-	Grid_Tile(sf::Vector2f scale = {0.0,0.0}, sf::Vector2f pos = {0.0,0.0}, sf::Vector2f square_width = { 0.0,0.0 }, const sf::Texture& texture = {}) : Sprite(texture) {
-		this->setScale(scale);
+	GridTile(sf::Vector2f pos = {0.0,0.0}, sf::Vector2f square_width = { 0.0,0.0 }, const sf::Texture& texture = {}) : Sprite(texture) {
 		this->setPosition(pos);
 		
 	}
+
+	
+
+
 
 	void setSize(sf::Vector2f newSize);
 
@@ -32,3 +35,5 @@ private:
 
 
 };
+
+//Grid_Tile& operator=(GridTile&lhs, GridTi)

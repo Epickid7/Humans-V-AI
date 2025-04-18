@@ -2,7 +2,7 @@
 
 
 
-void Grid_Tile::setSize(sf::Vector2f newSize)
+void GridTile::setSize(sf::Vector2f newSize)
 {
 	this->size = newSize;
 }
