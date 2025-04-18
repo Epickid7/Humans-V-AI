@@ -1,17 +1,19 @@
 #pragma once
 
 
-#include "Grid_Tile.hpp"
+#include "GridTile.hpp"
 #include <iostream>
 
 // Include SFML libraries
 #include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
 #include <SFML/Graphics/RectangleShape.hpp>
+#include <vector>
 
 #define ROW 5
 #define COLUMN 10
 
+using std::vector;
 
 // 
 class Grid 
@@ -21,7 +23,8 @@ public:
 
 	Grid();
 	
-
+	vector<vector<GridTile*>>& getGridArray();
+	
 	
 	
 private:
@@ -30,6 +33,6 @@ private:
 	//window_heighth - offset (if any) % grid width (row number)
 	
 	//declare array of pointers to towers here
-	Grid_Tile gridArray[ROW][COLUMN];
+	vector<vector<GridTile *>> gridArray;
 
 };

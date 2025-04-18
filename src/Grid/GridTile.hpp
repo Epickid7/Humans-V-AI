@@ -17,13 +17,14 @@ public:
 		
 	}
 
-	
+
+	GridTile& operator=(GridTile& rhs);
 
 
 
 	void setSize(sf::Vector2f newSize);
 
-	
+	sf::Vector2f getSize();
 
 private:
 	//I need to determine how they will click on a specific square
@@ -35,5 +36,3 @@ private:
 
 
 };
-
-//Grid_Tile& operator=(GridTile&lhs, GridTi)

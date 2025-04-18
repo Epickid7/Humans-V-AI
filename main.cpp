@@ -8,8 +8,8 @@
 // Include my headers
 #include "src/Utilities.h"
 #include "src/Grid/Grid.hpp"
-#include "src/Machine.hpp"
 #include "src/MobQueue/MobQueue.h"
+#include "src/Grid/GridTile.hpp"
 
 
 // Needed to maximize the screen on launch
@@ -41,14 +41,16 @@ int main()
     //test texture
     //sf::Texture t("assets/images/Jacob_Parnell_(LeKOBE)_the_kingdom_of_God_1ec41887-eaea-4609-922d-d2d0b6e5e0c9.png");
     
-    Grid gameBoard;
+    //Grid gameBoard;
+
+    GridTile* gameBoard[ROW][COLUMN] = { {nullptr} };
 
     //figure out how to declare Grid
     // loop to declare grid tiles
     for (int i = 0; i < 5; i++) {
         for (int j = 0; j < 10; j++) {
             // we need overloaded assignment operator
-            //gameBoard.gridArray[i][j] = new 
+            gameBoard[i][j] = new GridTile();
         }
     }
 
@@ -87,6 +89,9 @@ int main()
         //Draw 'Machine'
         //window.draw(m);
         //window.draw(m2);
+        // 
+        // draw grid here
+       // window.draw()
         
         //m.move(sf::Vector2f(-.01,0));
         //m2.move(sf::Vector2f(-.02, 0));

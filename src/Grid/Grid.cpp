@@ -1,6 +1,15 @@
 # include "Grid.hpp"
 
-void Grid::setSquareWidth(sf::Vector2f newSquareWidth)
+
+
+Grid::Grid()
 {
-	this->squareWidth = newSquareWidth;
+
 }
+
+vector<vector<GridTile*>>& Grid::getGridArray()
+{
+	return this->gridArray;
+}
+
+
