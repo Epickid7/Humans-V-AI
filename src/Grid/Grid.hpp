@@ -31,5 +31,7 @@ private:
 	//window_heighth - offset (if any) % grid width (row number)
 	sf::Vector2f squareWidth;
 	
+	//declare array of pointers to towers here
 	
+
 };
