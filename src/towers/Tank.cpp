@@ -1,5 +1,11 @@
 #include "Tank.h"
 
-void Tank::useAbility();
+void Tank::useAbility()
+{
 
-void Tank::destroyTower(void);
+}
+
+void Tank::destroyTower(void)
+{
+
+}
