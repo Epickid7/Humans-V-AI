@@ -11,7 +11,7 @@ class Tower : public sf::Sprite
 
 public:
 
-	Tower(const sf::Texture &texture, int maxHealth = 10, double abilitySpeed = 1, int location[2] = nullptr, int cost);
+	Tower(const sf::Texture &texture, int maxHealth = 10, double abilitySpeed = 1, int location[2] = nullptr, int cost = 0);
 
 	Tower(Tower &t);
 	~Tower();
