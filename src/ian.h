@@ -23,11 +23,18 @@ public:
 		return damage;
 	}
 
-	bool OuterBounds() 
+	// check if the Projectile is out of bounds
+	bool OuterBounds(const sf::RenderWindow& window) const
 	{
-		
+		sf::Vector2f pos = getPosition();
+		return pos.x < 0 || pos.x > window.getSize().x || pos.y < 0 || pos.y > window.getSize().y;
 	}
 
+	// check for collision with a robobot
+	bool checkCollision(const sf::Sprite& target) const 
+	{
+		return getGlobalBounds().intersects(target.getGlobalBounds());
+	}
 
 private:
 	int damage;
