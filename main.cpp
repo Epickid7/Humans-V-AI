@@ -39,6 +39,11 @@ int main()
     //test texture
     sf::Texture grass(ASSETS_PATH "/images/grassTile.png",false, sf::IntRect({ 0,0 },
         { 67,120}));
+    //sf::Texture t(ASSETS_PATH "/images/8_bit_pixel_dragon_by_elpixelboy_d87udq0-fullview.jpg");
+    sf::Texture t(ASSETS_PATH "/images/default.png");
+    sf::Sprite sprite(t);
+    //t.loadFromFile(ASSETS_PATH "/images/8_bit_pixel_dragon_by_elpixelboy_d87udq0 - fullview.jpg");
+    // ("assets/images/Jacob_Parnell_(LeKOBE)_the_kingdom_of_God_1ec41887-eaea-4609-922d-d2d0b6e5e0c9.png");
     
     GridTile* gameBoard[ROW][COLUMN] = { {nullptr} };
 
