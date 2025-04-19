@@ -42,6 +42,7 @@ int main()
     //test texture
     sf::Texture t(ASSETS_PATH "/images/default.png");
     sf::Sprite sprite(t);
+    sprite.setPosition({ 0,0 });
     
     GridTile* gameBoard[ROW][COLUMN] = { {nullptr} };
 
@@ -69,8 +70,14 @@ int main()
             // Close window: exit
             if (event->is<sf::Event::Closed>())
                 window.close();
+            else if (event->is<sf::Event::MouseButtonPressed>()) {
+                std::cout << "clicking mouse" << std::endl;
+                window.draw(sprite);
+            }
 
             //sf::Mouse::Button::Left
+
+            
         }
 
         // Clear screen
@@ -84,6 +91,11 @@ int main()
             //mobs.getMachineType();
         }
 
+        //if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left))
+        //{
+        //    // left mouse button is pressed: shoot
+        //    window.draw(sprite);
+        //}
         
         for (int i = 0; i < ROW; i++) {
             for (int j = 0; j < COLUMN; j++) {
