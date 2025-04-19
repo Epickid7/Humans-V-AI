@@ -39,7 +39,8 @@ int main()
     //Machine m2(sf::Vector2f(window.getSize().x / 20, window.getSize().y / 10), sf::Vector2f(window.getSize().x + 100, window.getSize().y/2));
 
     //test texture
-    sf::Texture t(ASSETS_PATH "/images/8_bit_pixel_dragon_by_elpixelboy_d87udq0-fullview.jpg");
+    //sf::Texture t(ASSETS_PATH "/images/8_bit_pixel_dragon_by_elpixelboy_d87udq0-fullview.jpg");
+    sf::Texture t(ASSETS_PATH "/images/default.png");
     sf::Sprite sprite(t);
     //t.loadFromFile(ASSETS_PATH "/images/8_bit_pixel_dragon_by_elpixelboy_d87udq0 - fullview.jpg");
     // ("assets/images/Jacob_Parnell_(LeKOBE)_the_kingdom_of_God_1ec41887-eaea-4609-922d-d2d0b6e5e0c9.png");
