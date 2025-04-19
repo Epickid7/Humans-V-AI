@@ -71,6 +71,8 @@ int main()
             // Close window: exit
             if (event->is<sf::Event::Closed>())
                 window.close();
+
+            //sf::Mouse::Button::Left
         }
 
         // Clear screen
