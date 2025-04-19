@@ -11,5 +11,7 @@
 
 class Tank : public Tower
 {
+	void useAbility();
 
+	void destroyTower(void);
 };
