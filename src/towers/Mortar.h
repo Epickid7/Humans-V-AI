@@ -12,5 +12,7 @@
 
 class Mortar : public Tower
 {
+	void useAbility();
 
+	void destroyTower(void);
 };
