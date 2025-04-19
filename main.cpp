@@ -45,12 +45,13 @@ int main()
 
     GridTile* gameBoard[ROW][COLUMN] = { {nullptr} };
 
-    //figure out how to declare Grid
+    
     // loop to declare grid tiles
     for (int i = 0; i < 5; i++) {
         for (int j = 0; j < 10; j++) {
             // we need overloaded assignment operator
-            gameBoard[i][j] = new GridTile();
+            //declare with texture?
+           // gameBoard[i][j] = new GridTile({0.0,0.0},{window.getSize().x/10,window.getSize().x/10}, {});
         }
     }
 
