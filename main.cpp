@@ -7,6 +7,10 @@
 
 // Include my headers
 #include "src/Utilities.h"
+#include "src/Machine.h"
+
+// Needed to maximize the screen on launch
+#include <Windows.h>
 
 // Modified code from SFML's website
 
@@ -15,13 +19,21 @@ int main()
     // Create the main window
     sf::RenderWindow window(sf::VideoMode({800, 600}), "SFML window");
 
+    //Maximize window??
+    ::ShowWindow(window.getNativeHandle(), SW_MAXIMIZE);
+
     // Create a graphical text to display
     const sf::Font font = Utilities::getAttributedFont(FontStyle::SemiBoldItalic, "SF-Pro");
-    sf::Text text(font, "Hello SFML", 50);
+    sf::Text text(font, "Humans v AI", 50);
 
     // Create a second text, near the center of the screen
-    sf::Text text2(font, "Hello SFML", 50);
+    sf::Text text2(font, "Electric boogaloo", 50);
     text2.setPosition(sf::Vector2f(300, 300));
+
+    Machine m(sf::Vector2f(window.getSize().x/20,window.getSize().y/10),sf::Vector2f(window.getSize().x +100, window.getSize().y + 500));
+
+    
+    
 
     // Start the game loop
     while (window.isOpen())
@@ -38,10 +50,15 @@ int main()
         window.clear();
 
         // Draw the sprite
+        
 
         // Draw the string
         window.draw(text);
         window.draw(text2);
+
+        //Draw 'Machine'
+        window.draw(m);
+        m.move(sf::Vector2f(.01,.01));
 
         // Update the window
         window.display();

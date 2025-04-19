@@ -19,7 +19,7 @@ add_executable(SFML_Ex
         main.cpp
         src/Utilities.cpp
 
- "src/ian.h" "src/Machine.cpp")
+ "src/ian.h" "src/Machine.cpp" "src/Machine.h" "src/Tower.h"  "src/Tower.cpp")
 
 target_link_libraries(SFML_Ex
         SFML::System # Required
