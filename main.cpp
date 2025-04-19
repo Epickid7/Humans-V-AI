@@ -15,8 +15,6 @@
 // Needed to maximize the screen on launch
 #include <Windows.h>
 
-// Modified code from SFML's website
-
 int main()
 {
     // Create the main window
@@ -41,8 +39,7 @@ int main()
     //test texture
     sf::Texture grass(ASSETS_PATH "/images/grass-pixel-art-background-grass-texture-pixel-art-vector-flower-garden-700-238894687.jpg");
     sf::Sprite sprite(grass);
-    //t.loadFromFile(ASSETS_PATH "/images/8_bit_pixel_dragon_by_elpixelboy_d87udq0 - fullview.jpg");
-    // ("assets/images/Jacob_Parnell_(LeKOBE)_the_kingdom_of_God_1ec41887-eaea-4609-922d-d2d0b6e5e0c9.png");
+  
     
     //Grid gameBoard;
 
