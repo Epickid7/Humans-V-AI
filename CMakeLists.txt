@@ -21,9 +21,8 @@ add_executable(SFML_Ex
         "src/ian.h" 
         src/Grid/Grid.cpp "src/MobQueue/MobQueue.h"
         src/MobQueue/MobQueue.cpp
- "src/Grid/GridTile.cpp")
-
- "src/ian.h" "src/Machine.cpp" "src/Machine.h" "src/Tower.h"  "src/Tower.cpp")
+ "src/Grid/GridTile.cpp"
+ "src/Tower.h"  "src/Tower.cpp")
 
 target_link_libraries(SFML_Ex
         SFML::System # Required
