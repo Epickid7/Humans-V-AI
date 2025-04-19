@@ -49,6 +49,10 @@ public:
 		return location[1];
 	}
 
+	int  getAbilityPower() const
+	{
+		return abilityPower;
+	}
 #pragma endregion
 
 
@@ -99,6 +103,7 @@ private:
 	int maxHealth;
 	double abilitySpeed;
 	int location[2];
+	double abilityPower;
 
 };
 
