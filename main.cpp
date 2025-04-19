@@ -108,9 +108,6 @@ int main()
             }
             //this gets the desktop coordinates of the mouse, not the window coords
            // sprite.setPosition(sf::Vector2f(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y));
-            
-           
-           
            
         }
         
