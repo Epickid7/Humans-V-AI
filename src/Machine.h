@@ -1,3 +1,6 @@
+#pragma once
+
+
 #include <iostream>
 
 // Include SFML libraries
@@ -10,8 +13,10 @@ class Machine : public sf::RectangleShape
 {
 public:
 	Machine(sf::Vector2f size, sf::Vector2f pos) : RectangleShape(size) {
-		
+		this->setPosition(pos);
 	} 
+
+	//Machine();
 private:
 	
 };
