@@ -122,13 +122,7 @@ int main()
             }
         }
         window.draw(sprite);
-        //Draw 'Machine'
-        //window.draw(m);
-        //window.draw(m2);
-        // 
-        
-        //m.move(sf::Vector2f(-.01,0));
-        //m2.move(sf::Vector2f(-.02, 0));
+      
 
         // Update the window
         window.display();
