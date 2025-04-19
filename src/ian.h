@@ -3,7 +3,8 @@
 class Projectile
 {
 public:
-
+	Projectile();
+	Projectile() {}
 
 private:
 	int damage;
