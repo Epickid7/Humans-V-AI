@@ -18,7 +18,7 @@ FetchContent_MakeAvailable(SFML)
 add_executable(SFML_Ex 
     main.cpp
     src/Utilities.cpp 
-    "src/ian.h" "src/Tower.h"  
+    "src/ian.h" "src/Tower.h" "src/Grid/GridTile.cpp"
     "src/Tower.cpp" "src/Towers/Bank.h" "src/Towers/Bank.cpp" 
     "src/Towers/People.h" "src/Towers/Landmine.h" "src/Towers/Landmine.cpp" 
     "src/Towers/Mortar.h" "src/Towers/Rifleman.h" "src/Towers/Rifleman.cpp" 
