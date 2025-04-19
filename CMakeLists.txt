@@ -19,7 +19,7 @@ add_executable(SFML_Ex
         main.cpp
         src/Utilities.cpp
 
- "src/ian.h" "src/Machine.cpp" "src/Machine.h" "src/Tower.h"  "src/Tower.cpp")
+ "src/ian.h" "src/Machine.cpp" "src/Machine.h" "src/Tower.h"  "src/Tower.cpp" "src/towers/Bank.h" "src/towers/Bank.cpp" "src/towers/People.h" "src/towers/Landmine.h" "src/towers/Landmine.cpp" "src/towers/Mortar.h" "src/towers/Rifleman.h" "src/towers/Rifleman.cpp" "src/towers/Tank.h" "src/towers/Barricade.h" "src/towers/Barricade.cpp" "src/towers/Stickman.h")
 
 target_link_libraries(SFML_Ex
         SFML::System # Required
