@@ -6,58 +6,57 @@
 
 // getters
 int Character::getX() {
-	return 0;
+	return location[0];
 }
 
 int Character::getY() {
-	return 0;
+	return location[1];
 }
 double Character::getCurrentHealth() {
-	return 0;
+	return currentHealth;
 }
 
 double Character::getMaxHealth() {
-	return 0;
+	return maxHealth;
 }
 
 double Character::getAbilityPower() {
-	return 0;
+	return abilityPower;
 }
 
 double Character::getAbilitySpeed() {
-	return 0;
+	return abilitySpeed;
 }
 
-string Character::getAttackType() {
-	return nullptr;
-}
-
-void Character::setX(int newX)
-{
-}
-
-void Character::setY(int newY)
-{
-}
-
-void Character::setCurrentHealth(double newCur)
-{
-}
-
-void Character::setMaxHealth(double newMax)
-{
-}
-
-void Character::setAbilityPower(double newPower)
-{
-}
-
-void Character::setAbilitySpeed(double newSpeed)
-{
-}
-
-void Character::setAttackType(string newType)
-{
+int Character::getAttackType() {
+	return attackType;
 }
 
 // setters
+void Character::setX(int newX) {
+	location[0] = newX;
+}
+
+void Character::setY(int newY) {
+	location[1] = newY;
+}
+
+void Character::setCurrentHealth(double newCur) {
+	currentHealth = newCur;
+}
+
+void Character::setMaxHealth(double newMax) {
+	maxHealth = newMax;
+}
+
+void Character::setAbilityPower(double newPower) {
+	abilityPower = newPower;
+}
+
+void Character::setAbilitySpeed(double newSpeed) {
+	abilitySpeed = newSpeed;
+}
+
+void Character::setAttackType(AttackType newType) {
+	attackType = newType;
+}
