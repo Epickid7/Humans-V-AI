@@ -6,14 +6,16 @@
 #include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
 
-class Tower : public sf::Sprite
+#include "Character.h"
+
+class Tower : public Character
 {
+
 public:
 
-	Tower(const sf::Texture &texture, int maxHealth = 10, double abilitySpeed = 1, int location[2] = nullptr);
+	Tower(const sf::Texture &texture, int maxHealth = 10, double abilitySpeed = 1, int location[2] = nullptr, int cost = 0);
 
 	Tower(Tower &t);
-
 	~Tower();
 
 	Tower& operator=(Tower& rhs);
@@ -49,6 +51,15 @@ public:
 		return location[1];
 	}
 
+	int  getAbilityPower() const
+	{
+		return abilityPower;
+	}
+	
+	int getCost() const
+	{
+		return cost;
+	}
 #pragma endregion
 
 
@@ -92,13 +103,25 @@ public:
 		location[1] = y;
 		return 1;
 	}
+	//Must be nonnegative
+	bool setCost(int cost)
+	{
+		if (cost < 0) return 0;
+		else 
+		{
+			this->cost = cost;
+			return 1;
+		}
+	}
 #pragma endregion
 
 private:
+	int cost;
 	int health;
 	int maxHealth;
 	double abilitySpeed;
 	int location[2];
+	double abilityPower;
 
 };
 

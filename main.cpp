@@ -89,6 +89,7 @@ int main()
 
         // Draw the string
         //window.draw(text);
+        window.draw(sprite);
         
         for (int i = 0; i < ROW; i++) {
             for (int j = 0; j < COLUMN; j++) {
