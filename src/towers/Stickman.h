@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Tower.h"
+#include "../Tower.h"
 
 class Stickman : public Tower
 {

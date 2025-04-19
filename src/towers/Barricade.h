@@ -1,8 +1,8 @@
 #pragma once
 
-#include "Tower.h"
+#include "../Tower.h"
 
 class Barricade : public Tower
 {
-
+	
 };
