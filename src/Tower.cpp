@@ -1,11 +1,12 @@
 #include "Tower.h"
 
-Tower::Tower(const sf::Texture &texture, int maxHealth, double abilitySpeed, int location[2]) : sf::Sprite(texture)
+Tower::Tower(const sf::Texture &texture, int maxHealth, double abilitySpeed, int location[2], int cost) : sf::Sprite(texture)
 {
 	setMaxHealth(maxHealth);
 	setHealth(maxHealth);
 	setAbilitySpeed(abilitySpeed);
 	setLocation(location[0], location[1]);
+	setCost(cost);
 
 }
 
