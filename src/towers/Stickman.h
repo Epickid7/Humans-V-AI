@@ -1,3 +1,10 @@
+/*
+* Melee tower
+* 1 tile attack range
+* attack faster?
+* higher damage?
+*/
+
 #pragma once
 
 #include "../Tower.h"

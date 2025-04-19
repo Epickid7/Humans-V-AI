@@ -1,3 +1,9 @@
+/*
+* Barricade, wall/obstacle tower
+* No Damage
+* Higher Health
+*/
+
 #pragma once
 
 #include "../Tower.h"

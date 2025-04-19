@@ -1,3 +1,10 @@
+/*
+* People
+* Shoot Projectiles (bricks)
+* Low Damate
+* 
+*/
+
 #pragma once
 
 #include "../Tower.h"

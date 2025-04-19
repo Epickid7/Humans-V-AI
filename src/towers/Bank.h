@@ -1,3 +1,9 @@
+/*
+* Bank
+* No Damage
+* Econ, makes money
+* 
+*/
 #pragma once
 
 #include "../Tower.h"
