@@ -22,7 +22,8 @@ add_executable(SFML_Ex
         src/Grid/Grid.cpp "src/MobQueue/MobQueue.h"
         src/MobQueue/MobQueue.cpp
  "src/Grid/GridTile.cpp"
- "src/Tower.h"  "src/Tower.cpp")
+ "src/Tower.h"  "src/Tower.cpp"
+"8_bit_pixel_dragon_by_elpixelboy_d87udq0-fullview.jpg")
 
 target_link_libraries(SFML_Ex
         SFML::System # Required
