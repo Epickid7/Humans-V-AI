@@ -5,7 +5,7 @@
 |Jacob Parnell| 1           | ?    | Implement ...    |
 | Ian Van De Bogert    | 2           | ?   | Animated ...     |
 | Jayren Calub   | ?           | TBD | Enable ...       |
-| Parker Mulroy   | ?           | TBD | Enable ...       |
+| Parker Mulroy   | 6           | TBD | Enable ...       |
 
 ## Tools Used
 - SFML (API)
