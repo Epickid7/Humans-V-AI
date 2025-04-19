@@ -11,5 +11,7 @@
 
 class Landmine : public Tower
 {
+	void useAbility();
 
+	void destroyTower(void);
 };
