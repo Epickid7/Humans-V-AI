@@ -11,7 +11,7 @@
 #include <vector>
 
 #define ROW 5
-#define COLUMN 10
+#define COLUMN 9
 
 using std::vector;
 
