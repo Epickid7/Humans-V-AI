@@ -37,21 +37,17 @@ int main()
     //Machine m2(sf::Vector2f(window.getSize().x / 20, window.getSize().y / 10), sf::Vector2f(window.getSize().x + 100, window.getSize().y/2));
 
     //test texture
-    sf::Texture grass(ASSETS_PATH "/images/grass-pixel-art-background-grass-texture-pixel-art-vector-flower-garden-700-238894687.jpg");
+    sf::Texture grass(ASSETS_PATH "/images/grassTile.png",false, sf::IntRect({ 0,0 }, { 60,60 }));
     sf::Sprite sprite(grass);
   
-    
-    //Grid gameBoard;
-
     GridTile* gameBoard[ROW][COLUMN] = { {nullptr} };
 
     
     // loop to declare grid tiles
-    for (int i = 0; i < 5; i++) {
-        for (int j = 0; j < 10; j++) {
-            // we need overloaded assignment operator
-            //declare with texture?
-           gameBoard[i][j] = new GridTile(sf::Vector2f(i*window.getSize().x/10,j*window.getSize().y / 10 ),
+    for (int i = 0; i < ROW; i++) {
+        for (int j = 0; j < COLUMN; j++) {
+            //declare with texture
+           gameBoard[i][j] = new GridTile(sf::Vector2f(j*window.getSize().x/10,i*window.getSize().y / 10 +10 ),
                sf::Vector2f(window.getSize().x / 10,window.getSize().x / 10), grass);
         }
     }
@@ -88,8 +84,8 @@ int main()
         //window.draw(text);
         window.draw(sprite);
         
-        for (int i = 0; i < 5; i++) {
-            for (int j = 0; j < 10; j++) {
+        for (int i = 0; i < ROW; i++) {
+            for (int j = 0; j < COLUMN; j++) {
                 // we need overloaded assignment operator
                 //declare with texture?
                 window.draw(*gameBoard[i][j]);
