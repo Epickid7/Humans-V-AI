@@ -11,5 +11,7 @@
 
 class People : public Tower
 {
+	void useAbility();
 
+	void destroyTower(void);
 };
