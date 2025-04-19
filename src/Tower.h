@@ -13,9 +13,9 @@ class Tower : public Character
 
 public:
 
-	Tower(const sf::Texture &texture, int maxHealth = 10, double abilitySpeed = 1, int location[2] = nullptr, int cost = 0);
-
-	Tower(Tower &t);
+	//Tower(const sf::Texture &texture, int maxHealth = 10, double abilitySpeed = 1, int location[2] = nullptr, int cost = 0);
+	Tower();
+	//Tower(Tower &t);
 	~Tower();
 
 	Tower& operator=(Tower& rhs);

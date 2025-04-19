@@ -86,10 +86,6 @@ int main()
             //mobs.getMachineType();
         }
 
-
-        // Draw the string
-        //window.draw(text);
-        window.draw(sprite);
         
         for (int i = 0; i < ROW; i++) {
             for (int j = 0; j < COLUMN; j++) {
@@ -103,8 +99,6 @@ int main()
         //window.draw(m);
         //window.draw(m2);
         // 
-        // draw grid here
-       // window.draw()
         
         //m.move(sf::Vector2f(-.01,0));
         //m2.move(sf::Vector2f(-.02, 0));
