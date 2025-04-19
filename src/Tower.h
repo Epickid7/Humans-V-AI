@@ -6,7 +6,9 @@
 #include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
 
-class Tower : public sf::Sprite
+#include "Character.h"
+
+class Tower : public Character
 {
 
 public:
