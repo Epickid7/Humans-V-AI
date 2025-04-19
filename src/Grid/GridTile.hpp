@@ -36,7 +36,7 @@ private:
 	sf::Vector2f size;
 	bool hasTower;
 
-	
+	//*use global bounds to set the tower location based off the grid tile location*
 
 
 };

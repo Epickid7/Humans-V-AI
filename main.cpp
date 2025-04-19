@@ -59,7 +59,7 @@ int main()
 
     sf::Keyboard::Key k(sf::Keyboard::Key::S);
 
-    
+
     
 
     // Start the game loop
