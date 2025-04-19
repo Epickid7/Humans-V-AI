@@ -40,10 +40,10 @@ int main()
         { 67,120}));
 
     //test texture
-    sf::Texture t(ASSETS_PATH "/images/default.png",false, sf::IntRect({ 0,0 },
+    sf::Texture t(ASSETS_PATH "/images/grassTile.png",false, sf::IntRect({ 0,0 },
         { 67,120 }));
     sf::Sprite sprite(t);
-    sprite.setPosition({ 0,0 });
+    sprite.setColor(sf::Color::Transparent);
     
     GridTile* gameBoard[ROW][COLUMN] = { {nullptr} };
 
@@ -95,9 +95,12 @@ int main()
 
         if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left))
         {
-            sprite.setPosition(sf::Vector2f(sf::Mouse::getPosition().x,sf::Mouse::getPosition().y ));
-            // left mouse button is pressed: shoot
-            window.draw(sprite);
+            //this gets the desktop coordinates of the mouse, not the window coords
+            sprite.setPosition(sf::Vector2f(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y));
+            
+           
+            sprite.setColor(sf::Color::Red);
+           
         }
         
         for (int i = 0; i < ROW; i++) {
@@ -107,7 +110,7 @@ int main()
                 window.draw(*gameBoard[i][j]);
             }
         }
-
+        window.draw(sprite);
         //Draw 'Machine'
         //window.draw(m);
         //window.draw(m2);
