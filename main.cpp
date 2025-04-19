@@ -47,7 +47,7 @@ int main()
     for (int i = 0; i < ROW; i++) {
         for (int j = 0; j < COLUMN; j++) {
             //declare with texture
-           gameBoard[i][j] = new GridTile(sf::Vector2f(j*window.getSize().x/10,i*window.getSize().y / 10 +10 ),
+           gameBoard[i][j] = new GridTile(sf::Vector2f(j*window.getSize().x/10 + window.getSize().x/20, i * window.getSize().y / 10 + 10),
                sf::Vector2f(window.getSize().x / 10,window.getSize().x / 10), grass);
         }
     }
