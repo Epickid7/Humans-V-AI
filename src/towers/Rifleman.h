@@ -11,5 +11,7 @@
 
 class Rifleman : public Tower
 {
+	void useAbility();
 
+	void destroyTower(void);
 };
