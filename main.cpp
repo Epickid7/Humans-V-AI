@@ -101,7 +101,8 @@ int main()
                     //declare with texture?
                     if ((*gameBoard[i][j]).getGlobalBounds().contains(sf::Vector2f(sf::Mouse::getPosition().x,
                         sf::Mouse::getPosition().y))) {
-                        sprite.setPosition(sf::Vector2f(sf::Mouse::getPosition().x, sf::Mouse::getPosition().y));
+                        //sprite.setPosition(sf::Vector2f(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y));
+                        sprite.setPosition({ (*gameBoard[i][j]).getPosition().x, (*gameBoard[i][j]).getPosition().y });
                         sprite.setColor(sf::Color::Red);
                     }
                 }
