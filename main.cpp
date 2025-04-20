@@ -20,8 +20,8 @@ int main()
     // Create the main window
     sf::RenderWindow window(sf::VideoMode({800, 600}), "SFML window");
 
-    
     sf::Clock clk;
+
     //Maximize window??
     ::ShowWindow(window.getNativeHandle(), SW_MAXIMIZE);
 
@@ -42,8 +42,8 @@ int main()
     //test texture
     sf::Texture t(ASSETS_PATH "/images/grassTile.png",false, sf::IntRect({ 0,0 },
         { 67,120 }));
-    sf::Sprite sprite(t);
-    sprite.setColor(sf::Color::Transparent);
+    sf::Sprite * sprite = new sf::Sprite(t);
+    (*sprite).setColor(sf::Color::Transparent);
     
     GridTile* gameBoard[ROW][COLUMN] = { {nullptr} };
 
@@ -57,8 +57,10 @@ int main()
         }
     }
 
-    sf::Keyboard::Key k(sf::Keyboard::Key::S);
 
+    //vector of sprites
+    //will change to tower type
+    vector<sf::Sprite> towerVector;
 
     
 
@@ -73,11 +75,8 @@ int main()
                 window.close();
             else if (event->is<sf::Event::MouseButtonPressed>()) {
                 std::cout << "clicking mouse" << std::endl;
-                //window.draw(sprite); 
-         
-            }
 
-            //sf::Mouse::Button::Left
+            }
 
             
         }
@@ -102,13 +101,16 @@ int main()
                     if ((*gameBoard[i][j]).getGlobalBounds().contains(sf::Vector2f(sf::Mouse::getPosition().x,
                         sf::Mouse::getPosition().y))) {
                         //sprite.setPosition(sf::Vector2f(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y));
-                        sprite.setPosition({ (*gameBoard[i][j]).getPosition().x, (*gameBoard[i][j]).getPosition().y });
-                        sprite.setColor(sf::Color::Red);
+                        sprite = new sf::Sprite(t);
+                        (*sprite).setPosition({ (*gameBoard[i][j]).getPosition().x, (*gameBoard[i][j]).getPosition().y });
+                        (*sprite).setColor(sf::Color::Magenta);
+                        towerVector.push_back(*sprite);
+
+                       
                     }
                 }
             }
-            //this gets the desktop coordinates of the mouse, not the window coords
-           // sprite.setPosition(sf::Vector2f(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y));
+           
            
         }
         
@@ -119,8 +121,9 @@ int main()
                 window.draw(*gameBoard[i][j]);
             }
         }
-        window.draw(sprite);
-      
+        for (int i = 0; i < towerVector.size(); i++) {
+            window.draw(towerVector.at(i));
+        }
 
         // Update the window
         window.display();
