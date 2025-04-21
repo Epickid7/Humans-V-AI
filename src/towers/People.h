@@ -1,7 +1,8 @@
 /*
 * People
 * Shoot Projectiles (bricks)
-* Low Damate
+* Low Damage (2)
+* Average Health (10)
 * 
 */
 
