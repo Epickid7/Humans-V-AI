@@ -20,7 +20,7 @@ Tower& Tower::operator=(Tower& rhs)
 		return *this;
 	}
 
-	this->health = rhs.health;
+	//this->health = rhs.health;
 	this->maxHealth = rhs.maxHealth;
 	this->abilityPower = rhs.abilityPower;
 	this->abilitySpeed = rhs.abilitySpeed;

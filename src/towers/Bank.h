@@ -12,9 +12,9 @@ class Bank : public Tower
 {
 public:
 
-	Bank(const sf::Texture& texture, int maxHealth = 10, double abilitySpeed = 1, int location[2] = nullptr, int cost = 0) : Tower(texture,maxHealth,abilitySpeed,location,cost) {
+	/*Bank(const sf::Texture& texture, int maxHealth = 10, double abilitySpeed = 1, int location[2] = nullptr, int cost = 0) : Tower(texture,maxHealth,abilitySpeed,location,cost) {
 
-	}
+	}*/
 
 	void useAbility(int& money);
 
