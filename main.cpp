@@ -10,6 +10,7 @@
 #include "src/Grid/Grid.hpp"
 #include "src/MobQueue/MobQueue.h"
 #include "src/Grid/GridTile.hpp"
+#include "src/TowerSelect/TowerSelect.h"
 
 
 // Needed to maximize the screen on launch
@@ -20,18 +21,20 @@ int main()
     // Create the main window
     sf::RenderWindow window(sf::VideoMode({800, 600}), "SFML window");
 
+    //set mouse to window position
+    sf::Vector2f mouse = window.mapPixelToCoords(sf::Mouse::getPosition(window));
+
     sf::Clock clk;
 
     //Maximize window??
     ::ShowWindow(window.getNativeHandle(), SW_MAXIMIZE);
 
     // Create a graphical text to display
+    TowerSelect selectMenu;
    
 
     /*MobQueue mobs;
     mobs.loadFromLevelFile("../MobList/LevelOne.csv");*/
-
-    //test machines
 
 
     //grass texture
@@ -97,8 +100,12 @@ int main()
                 for (int j = 0; j < COLUMN; j++) {
                     // we need overloaded assignment operator
                     //declare with texture?
-                    if ((*gameBoard[i][j]).getGlobalBounds().contains(sf::Vector2f(sf::Mouse::getPosition().x,
-                        sf::Mouse::getPosition().y))) {
+                    
+                    if ((*gameBoard[i][j]).getGlobalBounds().contains(sf::Vector2f(mouse.x,
+                        mouse.y))) {
+
+                        //test code for inserting tower
+                       
                         //sprite.setPosition(sf::Vector2f(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y));
                         sprite = new sf::Sprite(t);
                         (*sprite).setPosition({ (*gameBoard[i][j]).getPosition().x, (*gameBoard[i][j]).getPosition().y });
@@ -114,8 +121,13 @@ int main()
         }
 
 
-       
-        
+        //draw menu for choosing tower
+        selectMenu.displayTowerList(window);
+        selectMenu.checkForTowerSelect();
+
+        mouse = window.mapPixelToCoords(sf::Mouse::getPosition(window));
+
+
         for (int i = 0; i < ROW; i++) {
             for (int j = 0; j < COLUMN; j++) {
                 // we need overloaded assignment operator
