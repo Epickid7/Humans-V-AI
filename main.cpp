@@ -64,7 +64,7 @@ int main()
     //will change to tower type
     vector<sf::Sprite> towerVector;
 
-    
+   
 
     // Start the game loop
     while (window.isOpen())
@@ -80,7 +80,6 @@ int main()
 
             }
 
-            
         }
 
         // Clear screen
@@ -116,8 +115,6 @@ int main()
                     }
                 }
             }
-           
-           
         }
 
 
