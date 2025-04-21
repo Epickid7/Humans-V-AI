@@ -7,6 +7,7 @@
 #pragma once
 
 #include "../Tower.h"
+#include "../Player.h"
 
 class Bank : public Tower
 {
@@ -15,7 +16,7 @@ public:
 
 	Bank(int x, int y);
 
-	void useAbility();
+	void useAbility(Player p);
 
 	void destroyTower(void);
 
