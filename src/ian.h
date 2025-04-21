@@ -8,7 +8,7 @@ class Projectile : public sf::Sprite
 {
 public:
 	// Projectile Constructor
-	Projectile(const sf::Vector2f& pos, const sf::Vector2f& direction, sf::Texture& texture, int newDamage, double newSpeed) : sf::Sprite(texture), speed(newSpeed), damage(newDamage), direction(direction) { setPosition(pos); }
+	Projectile(const sf::Vector2f& pos, const sf::Vector2f& direction, sf::Texture& texture, int newDamage, double newSpeed) : sf::Sprite(texture), speed(newSpeed), damage(newDamage), direction(normalize(direction)) { setPosition(pos); }
 
 	// update position of the projectile in gameplay
 	void update_pos(double time)
@@ -23,6 +23,17 @@ public:
 		return damage;
 	}
 
+	// speed getter
+	double getSpeed(void) const
+	{
+		return speed;
+	}
+
+	sf::Vector2f getDirection(void) const
+	{
+		return direction;
+	}
+
 	// check if the Projectile is out of bounds
 	bool OuterBounds(const sf::RenderWindow& window) const
 	{
@@ -34,6 +45,13 @@ public:
 	bool checkCollision(const sf::Sprite& target) const 
 	{
 		return getGlobalBounds().intersects(target.getGlobalBounds());
+	}
+
+	// normalization function for the direction, getting the magnitude
+	sf::Vector2f normalize(sf::Vector2f& direc)
+	{
+		double magnitude = sqrt(direc.x * direc.y * direc.y);
+		return magnitude;
 	}
 
 private:
