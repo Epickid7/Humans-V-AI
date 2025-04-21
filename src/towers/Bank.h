@@ -11,6 +11,7 @@
 class Bank : public Tower
 {
 public:
+	Bank();
 
 	Bank(int x, int y);
 
