@@ -10,7 +10,8 @@
 
 class Bank : public Tower
 {
-	void useAbility();
+	
+	void useAbility(int& money);
 
 	void destroyTower(void);
 };
