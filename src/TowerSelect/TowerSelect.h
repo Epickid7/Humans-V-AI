@@ -10,6 +10,12 @@
 class TowerSelect {
 public:
 	void displayTowerList(sf::RenderWindow &window);
-private:
 
+	void setCurTower(int newCurTower);
+
+	void checkForTowerSelect();
+
+	int getCurTower(void);
+private:
+	int curTower;
 };

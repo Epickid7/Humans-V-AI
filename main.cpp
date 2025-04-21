@@ -10,6 +10,7 @@
 #include "src/Grid/Grid.hpp"
 #include "src/MobQueue/MobQueue.h"
 #include "src/Grid/GridTile.hpp"
+#include "src/TowerSelect/TowerSelect.h"
 
 
 // Needed to maximize the screen on launch
@@ -26,12 +27,11 @@ int main()
     ::ShowWindow(window.getNativeHandle(), SW_MAXIMIZE);
 
     // Create a graphical text to display
+    TowerSelect selectMenu;
    
 
     /*MobQueue mobs;
     mobs.loadFromLevelFile("../MobList/LevelOne.csv");*/
-
-    //test machines
 
 
     //grass texture
@@ -113,8 +113,8 @@ int main()
            
         }
 
-
-       
+        //draw menu for choosing tower
+        selectMenu.displayTowerList(window);
         
         for (int i = 0; i < ROW; i++) {
             for (int j = 0; j < COLUMN; j++) {
