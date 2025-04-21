@@ -23,7 +23,8 @@ class TowerSelect {
 public:
 
 	TowerSelect(Tower*towerToPlace = nullptr,int curTower = 0) {
-
+		this->towerToPlace = towerToPlace;
+		this->curTower = curTower;
 	}
 
 	void displayTowerList(sf::RenderWindow &window);

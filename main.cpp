@@ -27,12 +27,15 @@ int main()
 
     sf::Clock clk;
 
-    //Maximize window??
+    //Maximize window
     ::ShowWindow(window.getNativeHandle(), SW_MAXIMIZE);
 
     // Create a graphical text to display
     TowerSelect selectMenu;
    
+    // Create Player object to store game data
+    Player player(300);
+    const sf::Font font = Utilities::getAttributedFont(FontStyle::SemiBoldItalic, "SF-Pro");
 
     /*MobQueue mobs;
     mobs.loadFromLevelFile("../MobList/LevelOne.csv");*/
@@ -43,7 +46,7 @@ int main()
         { 67,120}));
 
 
-    sf::Texture bankTest(ASSETS_PATH "/images/bank.png");
+    sf::Texture bankTest(ASSETS_PATH "/images/Bank_pixel_art_real.png");
     sf::Sprite s(bankTest);
     
 
@@ -75,6 +78,7 @@ int main()
     // Start the game loop
     while (window.isOpen())
     {
+        sf::Music music(ASSETS_PATH "/music/Ultimate Battle.wav");
         // Process events
         while (const std::optional event = window.pollEvent())
         {
@@ -119,6 +123,10 @@ int main()
             }
         }
 
+        //Draw money
+        sf::Text money(font, sf::String( std::to_string(player.getMoney())), 30);
+        money.setPosition(sf::Vector2f(0, 0 ));
+        window.draw(money);
 
         //draw menu for choosing tower
         selectMenu.displayTowerList(window);
