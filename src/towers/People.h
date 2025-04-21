@@ -19,5 +19,5 @@ public:
 	void destroyTower(void);
 
 protected:
-	const string peopleTexture = ASSETS_PATH "/images/people.png"
+	const string peopleTexture = ASSETS_PATH "/images/people.png";
 };
