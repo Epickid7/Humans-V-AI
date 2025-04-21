@@ -8,6 +8,15 @@
 #include "../Utilities.h"
 #include "../Grid/GridTile.hpp"
 #include "../Grid/Grid.hpp"
+#include "../Tower.h"
+#include "../towers/Bank.h"
+#include "../towers/Barricade.h"
+#include "../towers/Landmine.h"
+#include "../towers/Mortar.h"
+#include "../towers/People.h"
+#include "../towers/Rifleman.h"
+#include "../towers/Stickman.h"
+#include "../towers/Tank.h"
 
 
 class TowerSelect {
@@ -25,4 +34,5 @@ public:
 	int getCurTower(void);
 private:
 	int curTower;
+	Tower* towerToPlace;
 };

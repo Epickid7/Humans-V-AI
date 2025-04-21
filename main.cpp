@@ -43,9 +43,9 @@ int main()
         { 67,120}));
 
 
-   /* sf::Texture bankTest(ASSETS_PATH "/images/Bank_pixel_art.png");
+    sf::Texture bankTest(ASSETS_PATH "/images/Bank_pixel_art_real.png");
     sf::Sprite s(bankTest);
-    s.scale(sf::Vector2f(.30,.30));*/
+    
 
     //test texture
     sf::Texture t(ASSETS_PATH "/images/grassTile.png",false, sf::IntRect({ 0,0 },
@@ -108,9 +108,9 @@ int main()
                         //test code for inserting tower
                        
                         //sprite.setPosition(sf::Vector2f(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y));
-                        sprite = new sf::Sprite(t);
+                        sprite = new sf::Sprite(s);
                         (*sprite).setPosition({ (*gameBoard[i][j]).getPosition().x, (*gameBoard[i][j]).getPosition().y });
-                        (*sprite).setColor(sf::Color::Magenta);
+                        (*sprite).setColor(sf::Color::White);
                         towerVector.push_back(*sprite);
                         
                        
@@ -143,7 +143,7 @@ int main()
             window.draw(towerVector.at(i));
         }
 
-       // window.draw(s);
+       //window.draw(s);
 
         // Update the window
         window.display();
