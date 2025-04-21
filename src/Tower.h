@@ -7,6 +7,7 @@
 #include <SFML/Graphics.hpp>
 
 #include "Character.h"
+#include "Projectile.h"
 
 class Tower : public Character
 {
