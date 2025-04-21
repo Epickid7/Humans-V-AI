@@ -21,6 +21,11 @@
 
 class TowerSelect {
 public:
+
+	TowerSelect(Tower*towerToPlace = nullptr,int curTower = 0) {
+
+	}
+
 	void displayTowerList(sf::RenderWindow &window);
 
 	void setCurTower(int newCurTower);
