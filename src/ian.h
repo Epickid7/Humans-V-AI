@@ -4,6 +4,8 @@
 #include <iostream>
 
 
+// Projectile class encapsulates all the logic going with the projectiles that towers will shoot at the robot invaders. 
+
 class Projectile : public sf::Sprite
 {
 public:
@@ -50,8 +52,24 @@ public:
 	// normalization function for the direction, getting the magnitude
 	sf::Vector2f normalize(sf::Vector2f& direc)
 	{
-		double magnitude = sqrt(direc.x * direc.y * direc.y);
+		double magnitude = sqrt(direc.x * direc.y);
 		return magnitude;
+	}
+
+	// setters
+	void setDamage(int& newDamage)
+	{
+		damage = newDamage;
+	}
+
+	void setSpeed(double& newSpeed)
+	{
+		speed = newSpeed;
+	}
+
+	void setDirection(sf::Vector2f newDirection)
+	{
+		direction = normalize(newDirection);
 	}
 
 private:
