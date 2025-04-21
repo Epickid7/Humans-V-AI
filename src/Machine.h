@@ -1,4 +1,5 @@
 #include "Character.h"
+#include "Tower.h"
 
 class Machine : public Character {
 protected:
@@ -18,6 +19,9 @@ public:
 		isInRange = inRange;
 	}
 
+	// destructor
+	virtual ~Machine() {}
+
 	// setters
 	void setPayout(int newPay);
 	void setDamage(double newDamage);
@@ -31,7 +35,7 @@ public:
 	bool getRange();
 
 	// member functions
-	virtual void useAbility() = 0;
+	virtual void useAbility(Tower towerInGrid) = 0;
 	void moveLeft();
 };
 
