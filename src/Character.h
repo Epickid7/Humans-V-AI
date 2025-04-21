@@ -59,8 +59,4 @@ public:
 	void setAttackType(AttackType newType);
 
 	// member functions
-<<<<<<< HEAD
-	virtual void update() = 0;
-=======
->>>>>>> 01db6ecc10a19f24171aaa4053a499440d78a758
 };
