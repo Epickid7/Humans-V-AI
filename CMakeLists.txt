@@ -24,7 +24,7 @@ add_executable(SFML_Ex
         src/Character.cpp
         src/Grid/GridTile.cpp
         "src/Tower.h"
-        src/Tower.cpp)
+        src/Tower.cpp "src/Machine.h")
 
 target_link_libraries(SFML_Ex
         SFML::System # Required
