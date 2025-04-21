@@ -1,10 +1,9 @@
-# SFML-Demo
-## Team `<NAME>`
+## Team `FIFERS`
 | Team Member | Lab Section | Role       | Responsibilities |
 |-------------|-------------|------------|------------------|
 |Jacob Parnell| 1           | ?    | Implement ...    |
-| Ian Van De Bogert    | 2           | ?   | Animated ...     |
-| Jayren Calub   | ?           | TBD | Enable ...       |
+| Ian Van De Bogert    | 6           | ?   | Animated ...     |
+| Jayren Calub   | 2           | TBD | Enable ...       |
 | Parker Mulroy   | 6           | TBD | Enable ...       |
 
 ## Tools Used
@@ -18,7 +17,7 @@
 3. Does it depend on the OS? (Only required if you make it X-compatible)
 
 ## How to Play the Game
-This can be a very basic explanation.
+It's just like Plants vs Zombies.
 
 ---
 
@@ -49,17 +48,6 @@ use `<br>` to insert a new line.
 The first time the program is ran, it could take a long time depending on internet speed and CPU speed. This CMake will
 fetch SFML 3.0.0 from the SFML GitHub page. It will then "make" the SFML library on your computer. "make" means to
 compile the library locally on your machine. This ensures compatability with your machine.
-
-#### Failing to Build
-If this project does not build due to git missing, please install git using one of the methods mentioned above. Then,
-restart your computer.
-
-If the project does not build, try deleting all folders **within** the `out` and `cmake-build-debug` folders. Please do
-not delete the folders themselves. Only delete all contents **within**.
-
-#### Tested Environments
-The project was tested in Visual Studio and CLion on Windows and CLion on macOS. These methods are guaranteed to work.
-However, there were some complications where Visual Studio was reluctant to build the first time.
 
 
 ### Reminders For the Assignment

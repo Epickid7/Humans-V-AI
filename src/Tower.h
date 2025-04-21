@@ -6,14 +6,18 @@
 #include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
 
-class Tower : public sf::Sprite
+#include "Character.h"
+#include "Projectile.h"
+
+class Tower : public Character
 {
+
 public:
 
-	Tower(const sf::Texture &texture, int maxHealth = 10, double abilitySpeed = 1, int location[2] = nullptr);
+	Tower(int x, int y, double current, double max, double power, double speed,
+		int type, const sf::Texture& texture, int cost);
 
 	Tower(Tower &t);
-
 	~Tower();
 
 	Tower& operator=(Tower& rhs);
@@ -23,82 +27,30 @@ public:
 	virtual void destroyTower(void);
 
 #pragma region getters
-
-	int getHealth(void) const
+	
+	int getCost() const
 	{
-		return health;
+		return cost;
 	}
-
-	int getMaxHealth(void) const
-	{
-		return maxHealth;
-	}
-
-	double getAbilitySpeed() const
-	{
-		return abilitySpeed;
-	}
-
-	int getLocationX() const
-	{
-		return location[0];
-	}
-
-	int getLocationY() const
-	{
-		return location[1];
-	}
-
 #pragma endregion
 
 
 #pragma region setters
 	//0 if invalid, 1 for valid/updated
 	
-	//Must be nonnegative and less than max health
-	bool setHealth(int newHealth)
+	bool setCost(int cost)
 	{
-		if (newHealth > maxHealth || newHealth < 0) return 0;
-		else
+		if (cost < 0) return 0;
+		else 
 		{
-			health = newHealth;
+			this->cost = cost;
 			return 1;
 		}
-	}
-	//Must be nonnegative
-	bool setMaxHealth(int newMaxHealth)
-	{
-		if (newMaxHealth < 0) return 0;
-		else
-		{
-			maxHealth = newMaxHealth;
-			return 1;
-		}
-	}
-	//Must be nonnegative
-	bool setAbilitySpeed(double newAbilitySpeed)
-	{
-		if (newAbilitySpeed < 0) return 0;
-		else
-		{
-			abilitySpeed = newAbilitySpeed;
-			return 1;
-		}
-	}
-	//No conditions?? boundaries are checked elsewhere
-	bool setLocation(int x, int y)
-	{
-		location[0] = x;
-		location[1] = y;
-		return 1;
 	}
 #pragma endregion
 
-private:
-	int health;
-	int maxHealth;
-	double abilitySpeed;
-	int location[2];
+protected:
+	int cost;
 
 };
 
