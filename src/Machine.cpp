@@ -5,8 +5,16 @@ void Machine::setPayout(int newPay) {
 	payout = newPay;
 }
 
-void Machine::setDamage(int newDamage) {
+void Machine::setDamage(double newDamage) {
 	damage = newDamage;
+}
+
+void Machine::setMovementSpeed(double newSpeed) {
+	movementSpeed = newSpeed;
+}
+
+void Machine::setRange(bool newRange) {
+	isInRange = newRange;
 }
 
 // getters
@@ -16,4 +24,12 @@ int Machine::getPayout() {
 
 double Machine::getDamage() {
 	return damage;
+}
+
+double Machine::getMovementSpeed() {
+	return movementSpeed;
+}
+
+bool Machine::getRange() {
+	return isInRange;
 }
