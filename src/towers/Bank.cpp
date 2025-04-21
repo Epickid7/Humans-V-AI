@@ -15,7 +15,7 @@ void Bank::useAbility()
 {
 }
 
-void Bank::useAbility(Player p)
+void Bank::useAbility(Player &p)
 {
 	p.addMoney(getAbilityPower());
 }
