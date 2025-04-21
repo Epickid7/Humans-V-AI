@@ -26,6 +26,28 @@ Tower::~Tower()
 {
 }
 
+Tower& Tower::operator=(Tower& rhs)
+{
+	if (this == &rhs)
+	{
+		return *this;
+	}
+
+	this->health = rhs.health;
+	this->maxHealth = rhs.maxHealth;
+	this->abilityPower = rhs.abilityPower;
+	this->abilitySpeed = rhs.abilitySpeed;
+	this->cost = rhs.cost;
+	this->location[0] = rhs.location[0];
+	this->location[1] = rhs.location[1];
+	//this->attackType = rhs.attackType;
+	//this->currentHealth = rhs.currentHealth;
+
+	sf::Sprite::operator=(rhs);
+
+	return *this;
+}
+
 //Add any extra on destroy effects for the gameplay
 void Tower::destroyTower(void)
 {
