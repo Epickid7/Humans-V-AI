@@ -27,7 +27,8 @@ int main()
 
     // Create a graphical text to display
     const sf::Font font = Utilities::getAttributedFont(FontStyle::SemiBoldItalic, "SF-Pro");
-    sf::Text text(font, "Humans v AI", 50);
+    sf::Text text(font, "Rifleman (5)", 30);
+    text.setPosition(sf::Vector2f(0,40));
 
     /*MobQueue mobs;
     mobs.loadFromLevelFile("../MobList/LevelOne.csv");*/
@@ -113,6 +114,9 @@ int main()
            
            
         }
+
+
+        window.draw(text);
         
         for (int i = 0; i < ROW; i++) {
             for (int j = 0; j < COLUMN; j++) {
