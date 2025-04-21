@@ -15,9 +15,9 @@ public:
 		int newPayout = 0, double newDamage = 0, double newMoveSpeed = 0, bool inRange = false)
 		: Machine(x, y, current, max, power, speed, type, texture, newPayout, newDamage, newMoveSpeed, inRange) {}
 
-	void useAbility(Tower towerInGrid);
+	void useAbility(Tower& towerInGrid);
 };
 
-void Toaster::useAbility(Tower towerInGrid) {
+void Toaster::useAbility(Tower& towerInGrid) {
 	
 }
