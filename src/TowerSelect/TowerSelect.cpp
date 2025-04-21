@@ -44,27 +44,35 @@ void TowerSelect::checkForTowerSelect()
 {
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Num1)) {
         this->curTower = 1;
+        std::cout << "Pressing Key 1" << std::endl;
     }
     else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Num2)) {
         this->curTower = 2;
+        std::cout << "Pressing Key 2" << std::endl;
     }
     else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Num3)) {
         this->curTower = 3;
+        std::cout << "Pressing Key 3" << std::endl;
     }
     else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Num4)) {
         this->curTower = 4;
+        std::cout << "Pressing Key 4" << std::endl;
     }
     else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Num5)) {
         this->curTower = 5;
+        std::cout << "Pressing Key 5" << std::endl;
     }
     else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Num6)) {
         this->curTower = 6;
+        std::cout << "Pressing Key 6" << std::endl;
     }
     else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Num7)) {
         this->curTower = 7;
+        std::cout << "Pressing Key 7" << std::endl;
     }
     else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Num8)) {
         this->curTower = 8;
+        std::cout << "Pressing Key 8" << std::endl;
     }
 }
 

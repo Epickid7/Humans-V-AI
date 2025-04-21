@@ -115,7 +115,8 @@ int main()
 
         //draw menu for choosing tower
         selectMenu.displayTowerList(window);
-        
+        selectMenu.checkForTowerSelect();
+
         for (int i = 0; i < ROW; i++) {
             for (int j = 0; j < COLUMN; j++) {
                 // we need overloaded assignment operator
