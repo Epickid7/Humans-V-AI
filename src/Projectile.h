@@ -10,14 +10,14 @@ class Projectile : public sf::Sprite
 {
 public:
 	// Projectile Constructor
-	Projectile(const sf::Vector2f& pos, const sf::Vector2f& direction, sf::Texture& texture, int newDamage, double newSpeed) : sf::Sprite(texture), speed(newSpeed), damage(newDamage), direction(normalize(direction)) { setPosition(pos); }
+	Projectile(const sf::Vector2f& pos, sf::Texture& texture, int newDamage, double newSpeed) : sf::Sprite(texture), speed(newSpeed), damage(newDamage) { setPosition(pos); }
 
-	// update position of the projectile in gameplay
-	void update_pos(double time)
-	{
-		sf::Vector2f change = direction * speed * time;
-		move(change); // move the projectile based on its direction, speed, and time in the air...
-	}
+	// update position of the projectile in gameplay, maybe don't need
+	//void update_pos(double time)
+	//{
+	//	sf::Vector2f change = direction.x * direction.y * speed * time;
+	//	move(change); // move the projectile based on its direction, speed, and time in the air...
+	//}
 
 	// damage getter
 	int getDamage(void) const
@@ -46,14 +46,10 @@ public:
 	// check for collision with a robobot
 	bool checkCollision(const sf::Sprite& target) const 
 	{
-		return getGlobalBounds().intersects(target.getGlobalBounds());
-	}
-
-	// normalization function for the direction, getting the magnitude
-	sf::Vector2f normalize(sf::Vector2f& direc)
-	{
-		double magnitude = sqrt(direc.x * direc.y);
-		return magnitude;
+		if (getGlobalBounds().findIntersection(target.getGlobalBounds()))
+		{
+			return true;
+		}
 	}
 
 	// setters
@@ -76,4 +72,12 @@ private:
 	int damage;
 	double speed;
 	sf::Vector2f direction;
+
+	// normalization function for the direction, getting the magnitude
+	sf::Vector2f normalize(sf::Vector2f& direc)
+	{
+		double magnitude = sqrt(direc.x * direc.x + direc.y * direc.y);
+		direc = sf::Vector2f(direc.x / magnitude, direc.y / magnitude);
+		return direc;
+	}
 };
