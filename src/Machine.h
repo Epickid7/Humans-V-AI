@@ -36,5 +36,5 @@ public:
 };
 
 void Machine::moveLeft() {
-	move({ -movementSpeed, 0 });
+	move(sf::Vector2f(-movementSpeed, 0));
 }
