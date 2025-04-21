@@ -42,7 +42,30 @@ void TowerSelect::setCurTower(int newCurTower)
 // as to which tower is selected
 void TowerSelect::checkForTowerSelect()
 {
-
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Num1)) {
+        this->curTower = 1;
+    }
+    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Num2)) {
+        this->curTower = 2;
+    }
+    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Num3)) {
+        this->curTower = 3;
+    }
+    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Num4)) {
+        this->curTower = 4;
+    }
+    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Num5)) {
+        this->curTower = 5;
+    }
+    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Num6)) {
+        this->curTower = 6;
+    }
+    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Num7)) {
+        this->curTower = 7;
+    }
+    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Num8)) {
+        this->curTower = 8;
+    }
 }
 
 int TowerSelect::getCurTower(void)
