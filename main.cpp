@@ -10,58 +10,67 @@
 #include "src/Grid/Grid.hpp"
 #include "src/MobQueue/MobQueue.h"
 #include "src/Grid/GridTile.hpp"
+#include "src/TowerSelect/TowerSelect.h"
+#include "src/Tower.h"
 
 
 // Needed to maximize the screen on launch
 #include <Windows.h>
-
-// Modified code from SFML's website
 
 int main()
 {
     // Create the main window
     sf::RenderWindow window(sf::VideoMode({800, 600}), "SFML window");
 
+    //set mouse to window position
+    sf::Vector2f mouse = window.mapPixelToCoords(sf::Mouse::getPosition(window));
+
+    sf::Clock clk;
+
     //Maximize window??
     ::ShowWindow(window.getNativeHandle(), SW_MAXIMIZE);
 
     // Create a graphical text to display
-    const sf::Font font = Utilities::getAttributedFont(FontStyle::SemiBoldItalic, "SF-Pro");
-    sf::Text text(font, "Humans v AI", 50);
-    
-    sf::Clock clk;
+    TowerSelect selectMenu;
+   
 
     /*MobQueue mobs;
     mobs.loadFromLevelFile("../MobList/LevelOne.csv");*/
 
-    //test machines
-    //Machine m(sf::Vector2f(window.getSize().x/20,window.getSize().y/10),sf::Vector2f(window.getSize().x +100, window.getSize().y/2));
-    //Machine m2(sf::Vector2f(window.getSize().x / 20, window.getSize().y / 10), sf::Vector2f(window.getSize().x + 100, window.getSize().y/2));
+
+    //grass texture
+    sf::Texture grass(ASSETS_PATH "/images/grassTile.png",false, sf::IntRect({ 0,0 },
+        { 67,120}));
+
+
+    sf::Texture bankTest(ASSETS_PATH "/images/Bank_pixel_art_real.png");
+    sf::Sprite s(bankTest);
+    
 
     //test texture
-    sf::Texture t(ASSETS_PATH "/images/grass-pixel-art-background-grass-texture-pixel-art-vector-flower-garden-700-238894687.jpg");
-    sf::Sprite sprite(t);
-    //t.loadFromFile(ASSETS_PATH "/images/8_bit_pixel_dragon_by_elpixelboy_d87udq0 - fullview.jpg");
-    // ("assets/images/Jacob_Parnell_(LeKOBE)_the_kingdom_of_God_1ec41887-eaea-4609-922d-d2d0b6e5e0c9.png");
+    sf::Texture t(ASSETS_PATH "/images/grassTile.png",false, sf::IntRect({ 0,0 },
+        { 67,120 }));
+    sf::Sprite * sprite = new sf::Sprite(t);
+    (*sprite).setColor(sf::Color::Transparent);
     
-    //Grid gameBoard;
-
     GridTile* gameBoard[ROW][COLUMN] = { {nullptr} };
 
     
     // loop to declare grid tiles
-    for (int i = 0; i < 5; i++) {
-        for (int j = 0; j < 10; j++) {
-            // we need overloaded assignment operator
-            //declare with texture?
-           // gameBoard[i][j] = new GridTile({0.0,0.0},{window.getSize().x/10,window.getSize().x/10}, {});
+    for (int i = 0; i < ROW; i++) {
+        for (int j = 0; j < COLUMN; j++) {
+            //declare with texture
+           gameBoard[i][j] = new GridTile(sf::Vector2f(j*window.getSize().x/12 + window.getSize().x/4, i * window.getSize().y / 5),
+               sf::Vector2f(window.getSize().x / 10,window.getSize().x / 10), grass);
         }
     }
 
-    sf::Keyboard::Key k(sf::Keyboard::Key::S);
 
-    
-    
+    //vector of sprites
+    //will change to tower type
+    vector<sf::Sprite> towerVector;
+    //vector<Tower> towerVectr;
+   
 
     // Start the game loop
     while (window.isOpen())
@@ -72,6 +81,7 @@ int main()
             // Close window: exit
             if (event->is<sf::Event::Closed>())
                 window.close();
+
         }
 
         // Clear screen
@@ -85,21 +95,55 @@ int main()
             //mobs.getMachineType();
         }
 
+        if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left))
+        {
+            for (int i = 0; i < ROW; i++) {
+                for (int j = 0; j < COLUMN; j++) {
+                    // we need overloaded assignment operator
+                    //declare with texture?
+                    
+                    if ((*gameBoard[i][j]).getGlobalBounds().contains(sf::Vector2f(mouse.x,
+                        mouse.y))) {
 
-        // Draw the string
-        //window.draw(text);
-        window.draw(sprite);
+                        //test code for inserting tower
+                       
+                        //sprite.setPosition(sf::Vector2f(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y));
+                        sprite = new sf::Sprite(s);
+                        (*sprite).setPosition({ (*gameBoard[i][j]).getPosition().x, (*gameBoard[i][j]).getPosition().y });
+                        (*sprite).setColor(sf::Color::White);
+                        towerVector.push_back(*sprite);
+                        
+                       
+                    }
+                }
+            }
+        }
+
+
+        //draw menu for choosing tower
+        selectMenu.displayTowerList(window);
+        selectMenu.checkForTowerSelect();
+        //check if user is clicking a tile
+
+        //check if user has necessary funds for selected tower
+
         
 
-        //Draw 'Machine'
-        //window.draw(m);
-        //window.draw(m2);
-        // 
-        // draw grid here
-       // window.draw()
-        
-        //m.move(sf::Vector2f(-.01,0));
-        //m2.move(sf::Vector2f(-.02, 0));
+        mouse = window.mapPixelToCoords(sf::Mouse::getPosition(window));
+
+
+        for (int i = 0; i < ROW; i++) {
+            for (int j = 0; j < COLUMN; j++) {
+                // we need overloaded assignment operator
+                //declare with texture?
+                window.draw(*gameBoard[i][j]);
+            }
+        }
+        for (int i = 0; i < towerVector.size(); i++) {
+            window.draw(towerVector.at(i));
+        }
+
+       //window.draw(s);
 
         // Update the window
         window.display();

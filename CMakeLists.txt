@@ -18,13 +18,14 @@ FetchContent_MakeAvailable(SFML)
 add_executable(SFML_Ex 
     main.cpp
     src/Utilities.cpp 
-    "src/ian.h" "src/Tower.h"  
+    "src/Projectile.h" "src/Tower.h"  
     "src/Tower.cpp" "src/Towers/Bank.h" "src/Towers/Bank.cpp" 
     "src/Towers/People.h" "src/Towers/Landmine.h" "src/Towers/Landmine.cpp" 
     "src/Towers/Mortar.h" "src/Towers/Rifleman.h" "src/Towers/Rifleman.cpp" 
     "src/Towers/Tank.h" "src/Towers/Barricade.h" "src/Towers/Barricade.cpp" 
     "src/Towers/Stickman.h" "src/Grid/Grid.cpp" "src/MobQueue/MobQueue.h"
-    "src/MobQueue/MobQueue.cpp" "src/Character.cpp" "src/Grid/GridTile.cpp")
+    "src/MobQueue/MobQueue.cpp" "src/Character.cpp" "src/TowerSelect/TowerSelect.h" "src/TowerSelect/TowerSelect.cpp"
+    "src/Grid/GridTile.cpp")
 
 target_link_libraries(SFML_Ex
         SFML::System # Required

@@ -1,7 +1,8 @@
 /*
 * People
 * Shoot Projectiles (bricks)
-* Low Damage
+* Low Damage (2)
+* Average Health (10)
 *  cost is 60
 */
 
