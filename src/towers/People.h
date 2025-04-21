@@ -1,8 +1,8 @@
 /*
 * People
 * Shoot Projectiles (bricks)
-* Low Damate
-* 
+* Low Damage
+*  cost is 60
 */
 
 #pragma once
