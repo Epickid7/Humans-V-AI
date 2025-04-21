@@ -1,4 +1,4 @@
-// Terminator: high health machine, slow speed
+// Terminator: high health machine, slow movement speed
 
 #pragma once
 
@@ -6,7 +6,7 @@
 
 class Terminator : public Machine {
 private:
-
+	const string bankTexture = ASSETS_PATH "/images/terminator.png";
 
 public:
 	Machine(int x = 0, int y = 0, double current = 0, double max = 0, double power = 0, double speed = 0,

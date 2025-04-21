@@ -1,4 +1,4 @@
-// Toaster: low health machine, quick speed
+// Toaster: low health machine, quick movement speed
 
 #pragma once
 
@@ -6,7 +6,7 @@
 
 class Toaster : public Machine {
 private:
-
+	const string bankTexture = ASSETS_PATH "/images/toaster.png";
 
 public:
 	// constructor

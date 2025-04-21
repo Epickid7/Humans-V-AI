@@ -1,4 +1,4 @@
-// Dog: medium health machine, quick speed, holds toaster
+// Dog: medium health machine, quick movement speed, holds toaster
 
 #pragma once
 
@@ -6,7 +6,7 @@
 
 class Dog : public Machine {
 private:
-
+	const string bankTexture = ASSETS_PATH "/images/dog.png";
 
 public:
 	Machine(int x = 0, int y = 0, double current = 0, double max = 0, double power = 0, double speed = 0,
