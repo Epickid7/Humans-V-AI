@@ -78,6 +78,7 @@ int main()
     // Start the game loop
     while (window.isOpen())
     {
+        sf::Music music(ASSETS_PATH "/music/Ultimate Battle.wav");
         // Process events
         while (const std::optional event = window.pollEvent())
         {
