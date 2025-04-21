@@ -16,13 +16,8 @@ public:
 		: Character(x, y, current, max, power, speed, type, texture) {}
 
 	void useAbility();
-	void move();
 };
 
 void Toaster::useAbility() {
-
-}
-
-void Toaster::move() {
 
 }

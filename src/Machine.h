@@ -32,5 +32,9 @@ public:
 
 	// member functions
 	virtual void useAbility() = 0;
-	virtual void move() = 0;
+	void moveLeft();
 };
+
+void Machine::moveLeft() {
+	move({ -movementSpeed, 0 });
+}
