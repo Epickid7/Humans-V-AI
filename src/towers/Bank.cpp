@@ -2,6 +2,7 @@
 
 void Bank::useAbility()
 {
+
 }
 
 void Bank::destroyTower(void)

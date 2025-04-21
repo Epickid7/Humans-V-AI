@@ -76,6 +76,11 @@ void TowerSelect::checkForTowerSelect()
     }
 }
 
+bool TowerSelect::checkForTowerPlace(GridTile** gameBoard[ROW][COLUMN], sf::Vector2f& mouse, std::vector<sf::Sprite>& towerVector)
+{
+    return false;
+}
+
 int TowerSelect::getCurTower(void)
 {
     return this->curTower;
