@@ -25,7 +25,7 @@ add_executable(SFML_Ex
     "src/Towers/Tank.h" "src/Towers/Barricade.h" "src/Towers/Barricade.cpp" 
     "src/Towers/Stickman.h" "src/Grid/Grid.cpp" "src/MobQueue/MobQueue.h"
     "src/MobQueue/MobQueue.cpp" "src/Character.cpp" "src/TowerSelect/TowerSelect.h" "src/TowerSelect/TowerSelect.cpp"
-    "src/Grid/GridTile.cpp")
+    "src/Grid/GridTile.cpp" "src/Player.h")
 
 target_link_libraries(SFML_Ex
         SFML::System # Required
