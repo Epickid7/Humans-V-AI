@@ -36,5 +36,9 @@ public:
 };
 
 void Machine::moveLeft() {
+<<<<<<< HEAD
 	move(sf::Vector2f(-movementSpeed, 0));
+=======
+	//move(sf::Vector2f({ -1 * movementSpeed, 0}));
+>>>>>>> 01db6ecc10a19f24171aaa4053a499440d78a758
 }
