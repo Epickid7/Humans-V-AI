@@ -11,8 +11,6 @@
 class Barricade : public Tower
 {
 public:
-	Barricade();
-
 	Barricade(int x, int y);
 
 	void useAbility();

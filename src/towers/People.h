@@ -13,8 +13,6 @@
 class People : public Tower
 {
 public:
-	People();
-
 	People(int x, int y);
 
 	void useAbility();
@@ -23,5 +21,4 @@ public:
 
 protected:
 	const string peopleTexture = ASSETS_PATH "/images/people.png";
-	const string brickTexture = ASSETS_PATH "/images/brick.png"
 };

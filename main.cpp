@@ -43,7 +43,7 @@ int main()
         { 67,120}));
 
 
-    sf::Texture bankTest(ASSETS_PATH "/images/bank.png");
+    sf::Texture bankTest(ASSETS_PATH "/images/Bank_pixel_art_real.png");
     sf::Sprite s(bankTest);
     
 
