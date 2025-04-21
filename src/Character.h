@@ -14,17 +14,22 @@ using std::string;
 #include <SFML/Graphics/RectangleShape.hpp>
 #include <SFML/Graphics/Sprite.hpp>
 
+enum AttackType {
+	MELEE,
+	PROJECTILE,
+	NEITHER
+};
+
 class Character : public sf::Sprite {
 protected:
-	int location[2];
+	int location[2], attackType;
 	double currentHealth, maxHealth, abilityPower, abilitySpeed;
-	string attackType;
 	sf::Texture texture;
 	
 public:
 	// constructor
-	Character(int x = 0, int y = 0, double current = 0, double max = 0, double power = 0, double speed = 0, string type = "", 
-		const sf::Texture& texture = sf::Texture(ASSETS_PATH "/images/default.png")) : Sprite(texture) {
+	Character(int x = 0, int y = 0, double current = 0, double max = 0, double power = 0, double speed = 0,
+		int type = AttackType::NEITHER, const sf::Texture& texture = sf::Texture(ASSETS_PATH "/images/default.png")) : Sprite(texture) {
 		location[0] = x;
 		location[1] = y;
 		currentHealth = current;
@@ -41,7 +46,7 @@ public:
 	double getMaxHealth();
 	double getAbilityPower();
 	double getAbilitySpeed();
-	string getAttackType();
+	int getAttackType();
 	// potential getter for texture???
 
 	// setters
@@ -51,5 +56,5 @@ public:
 	void setMaxHealth(double newMax);
 	void setAbilityPower(double newPower);
 	void setAbilitySpeed(double newSpeed);
-	void setAttackType(string newType);
+	void setAttackType(AttackType newType);
 };
