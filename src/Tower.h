@@ -13,7 +13,13 @@ class Tower : public Character
 
 public:
 
-	//Tower(const sf::Texture &texture, int maxHealth = 10, double abilitySpeed = 1, int location[2] = nullptr, int cost = 0);
+	Tower(const sf::Texture& texture, int maxHealth = 10, double abilitySpeed = 1, int location[2] = nullptr, int cost = 0) :Character(0, 0, 0, 0, 0, 0, 0, texture) {
+		setMaxHealth(maxHealth);
+		setHealth(maxHealth);
+		setAbilitySpeed(abilitySpeed);
+		setLocation(location[0], location[1]);
+		setCost(cost);
+	}
 	Tower();
 	//Tower(Tower &t);
 	~Tower();
