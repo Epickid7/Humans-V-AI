@@ -11,7 +11,13 @@
 
 class People : public Tower
 {
+public:
+	People(int x, int y);
+
 	void useAbility();
 
 	void destroyTower(void);
+
+protected:
+	const string peopleTexture = ASSETS_PATH "/images/people.png"
 };
