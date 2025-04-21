@@ -44,7 +44,7 @@ void TowerSelect::checkForTowerSelect()
 {
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Num1)) { //Bank
         this->curTower = 1;
-        towerToPlace = new Bank(0,0);
+        towerToPlace = new Bank();
         std::cout << "Pressing Key 1" << std::endl;
     }
     else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Num2)) { //Barricade
