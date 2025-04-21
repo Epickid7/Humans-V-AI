@@ -76,10 +76,6 @@ int main()
             // Close window: exit
             if (event->is<sf::Event::Closed>())
                 window.close();
-            else if (event->is<sf::Event::MouseButtonPressed>()) {
-                std::cout << "clicking mouse" << std::endl;
-
-            }
 
         }
 
@@ -111,7 +107,7 @@ int main()
                         (*sprite).setPosition({ (*gameBoard[i][j]).getPosition().x, (*gameBoard[i][j]).getPosition().y });
                         (*sprite).setColor(sf::Color::Magenta);
                         towerVector.push_back(*sprite);
-
+                        
                        
                     }
                 }
@@ -122,6 +118,11 @@ int main()
         //draw menu for choosing tower
         selectMenu.displayTowerList(window);
         selectMenu.checkForTowerSelect();
+        //check if user is clicking a tile
+
+        //check if user has necessary funds for selected tower
+
+        
 
         mouse = window.mapPixelToCoords(sf::Mouse::getPosition(window));
 
