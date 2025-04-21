@@ -7,6 +7,7 @@
 #pragma once
 
 #include "../Tower.h"
+#include "../Player.h"
 
 class Bank : public Tower
 {

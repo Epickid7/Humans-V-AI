@@ -12,6 +12,7 @@
 #include "src/Grid/GridTile.hpp"
 #include "src/TowerSelect/TowerSelect.h"
 #include "src/Tower.h"
+#include "src/Player.h"
 
 
 // Needed to maximize the screen on launch
