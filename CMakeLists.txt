@@ -18,16 +18,38 @@ FetchContent_MakeAvailable(SFML)
 add_executable(SFML_Ex 
     main.cpp
     src/Utilities.cpp 
-    "src/Projectile.h" "src/Tower.h"  
-    "src/Tower.cpp" "src/Towers/Bank.h" "src/Towers/Bank.cpp" 
-    "src/Towers/People.h" "src/Towers/Landmine.h" "src/Towers/Landmine.cpp" 
-    "src/Towers/Mortar.h" "src/Towers/Rifleman.h" "src/Towers/Rifleman.cpp" 
-    "src/Towers/Tank.h" "src/Towers/Barricade.h" "src/Towers/Barricade.cpp" 
-    "src/Towers/Stickman.h" "src/Grid/GridTile.cpp" "src/Grid/Grid.cpp" "src/MobQueue/MobQueue.h"
-    "src/MobQueue/MobQueue.cpp" "src/Character.cpp" "src/TowerSelect/TowerSelect.h" "src/TowerSelect/TowerSelect.cpp"
-    "src/Machine.h" "src/Machine.cpp" "src/machines/Toaster.h" "src/machines/Tesla.h" 
-    "src/machines/Dog.h" "src/machines/ChickenJockey.hpp" "src/machines/Flamethrower.h" 
-    "src/machines/Alarm.hpp" "src/machines/Tank.h" "src/Player.h")
+    "src/Projectile.h" 
+    "src/Tower.h"  
+    "src/Tower.cpp" 
+    "src/Towers/Bank.h" 
+    "src/Towers/Bank.cpp" 
+    "src/Towers/People.h" 
+    "src/Towers/Landmine.h" 
+    "src/Towers/Landmine.cpp" 
+    "src/Towers/Mortar.h" 
+    "src/Towers/Rifleman.h" 
+    "src/Towers/Rifleman.cpp" 
+    "src/Towers/Tank.h" 
+    "src/Towers/Barricade.h" 
+    "src/Towers/Barricade.cpp" 
+    "src/Towers/Stickman.h" 
+    "src/Grid/GridTile.cpp" 
+    "src/Grid/Grid.cpp" 
+    "src/MobQueue/MobQueue.h"
+    "src/MobQueue/MobQueue.cpp" 
+    "src/Character.cpp" 
+    "src/TowerSelect/TowerSelect.h" 
+    "src/TowerSelect/TowerSelect.cpp"
+    "src/Machine.h" 
+    "src/Machine.cpp" 
+    "src/machines/Toaster.hpp" 
+    "src/machines/Tesla.hpp" 
+    "src/machines/Dog.hpp" 
+    "src/machines/ChickenJockey.hpp" 
+    "src/machines/Flamethrower.hpp" 
+    "src/machines/Alarm.hpp" 
+    "src/machines/Tank.hpp" 
+    "src/Player.h")
 
 target_link_libraries(SFML_Ex
         SFML::System # Required
