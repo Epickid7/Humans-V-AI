@@ -10,9 +10,13 @@
 
 class Barricade : public Tower
 {
-	//Barricade() : Tower(sf::Texture(), 15, 1, { 0, 0 });
+public:
+	Barricade(int x, int y);
 
 	void useAbility();
 
 	void destroyTower(void);
+
+protected:
+	const string barricadeTexture = ASSETS_PATH "/images/barricade.png";
 };
