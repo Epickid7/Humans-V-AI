@@ -11,6 +11,7 @@
 #include "src/MobQueue/MobQueue.h"
 #include "src/Grid/GridTile.hpp"
 #include "src/TowerSelect/TowerSelect.h"
+#include "src/Tower.h"
 
 
 // Needed to maximize the screen on launch
@@ -63,7 +64,7 @@ int main()
     //vector of sprites
     //will change to tower type
     vector<sf::Sprite> towerVector;
-
+    //vector<Tower> towerVectr;
    
 
     // Start the game loop
