@@ -11,10 +11,14 @@
 class Bank : public Tower
 {
 public:
+	Bank();	
 
 	Bank(int x, int y);
 
+	//DOES NOT DO ANYTHING
 	void useAbility();
+
+	void useAbility(Player &p);
 
 	void destroyTower(void);
 

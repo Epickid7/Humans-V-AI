@@ -27,12 +27,15 @@ int main()
 
     sf::Clock clk;
 
-    //Maximize window??
+    //Maximize window
     ::ShowWindow(window.getNativeHandle(), SW_MAXIMIZE);
 
     // Create a graphical text to display
     TowerSelect selectMenu;
    
+    // Create Player object to store game data
+    Player player(300);
+    const sf::Font font = Utilities::getAttributedFont(FontStyle::SemiBoldItalic, "SF-Pro");
 
     /*MobQueue mobs;
     mobs.loadFromLevelFile("../MobList/LevelOne.csv");*/
@@ -119,6 +122,10 @@ int main()
             }
         }
 
+        //Draw money
+        sf::Text money(font, sf::String( std::to_string(player.getMoney())), 30);
+        money.setPosition(sf::Vector2f(0, 0 ));
+        window.draw(money);
 
         //draw menu for choosing tower
         selectMenu.displayTowerList(window);

@@ -57,4 +57,6 @@ public:
 	void setAbilityPower(double newPower);
 	void setAbilitySpeed(double newSpeed);
 	void setAttackType(AttackType newType);
+
+	// member functions
 };

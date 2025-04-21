@@ -5,7 +5,12 @@ Bank::Bank(int x, int y) : Tower(x, y, 10, 10, 20, 1, AttackType::NEITHER, sf::T
 
 }
 
+//DOES NOT DO ANYTHING
 void Bank::useAbility()
+{
+}
+
+void Bank::useAbility(Player &p)
 {
 	//money += 20;
 }
