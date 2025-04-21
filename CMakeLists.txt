@@ -24,7 +24,7 @@ add_executable(SFML_Ex
         src/Character.cpp
         src/Grid/GridTile.cpp
         "src/Tower.h"
-        src/Tower.cpp "src/Machine.h" "src/Machine.cpp")
+        src/Tower.cpp "src/Machine.h" "src/Machine.cpp" "src/machines/Toaster.h" "src/machines/Tesla.h" "src/machines/Dog.h" "src/machines/ChickenJockey.hpp" "src/machines/Flamethrower.h" "src/machines/Alarm.hpp" "src/machines/Tank.h")
 
 target_link_libraries(SFML_Ex
         SFML::System # Required
