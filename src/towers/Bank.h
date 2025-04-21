@@ -16,7 +16,7 @@ public:
 
 	}
 
-	void useAbility();
+	void useAbility(int& money);
 
 	void destroyTower(void);
 };
