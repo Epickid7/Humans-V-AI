@@ -43,9 +43,9 @@ int main()
         { 67,120}));
 
 
-    sf::Texture bankTest(ASSETS_PATH "/images/Bank_pixel_art.png");
+   /* sf::Texture bankTest(ASSETS_PATH "/images/Bank_pixel_art.png");
     sf::Sprite s(bankTest);
-    s.scale(sf::Vector2f(.30,.30));
+    s.scale(sf::Vector2f(.30,.30));*/
 
     //test texture
     sf::Texture t(ASSETS_PATH "/images/grassTile.png",false, sf::IntRect({ 0,0 },
@@ -143,7 +143,7 @@ int main()
             window.draw(towerVector.at(i));
         }
 
-        window.draw(s);
+       // window.draw(s);
 
         // Update the window
         window.display();

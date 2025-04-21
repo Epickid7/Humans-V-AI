@@ -15,7 +15,7 @@ public:
 	// update position of the projectile in gameplay
 	void update_pos(double time)
 	{
-		sf::Vector2f change = direction * speed * time;
+		sf::Vector2f change = { direction.x * speed * time, direction.y * speed * time };
 		move(change); // move the projectile based on its direction, speed, and time in the air...
 	}
 
