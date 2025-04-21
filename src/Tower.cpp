@@ -1,21 +1,11 @@
 #include "Tower.h"
 
-Tower::Tower(const sf::Texture &texture, int maxHealth, double abilitySpeed, int location[2], int cost) : sf::Sprite(texture)
+
+Tower::Tower(int x = 0, int y = 0, double current = 0, double max = 0, double power = 0, double speed = 0, string type = "",
+	const sf::Texture& texture = sf::Texture(ASSETS_PATH "/images/default.png"), int cost = 0)
+	: Character(x, y, current, max, power, speed, type, texture)
 {
-	setMaxHealth(maxHealth);
-	setHealth(maxHealth);
-	setAbilitySpeed(abilitySpeed);
-	setLocation(location[0], location[1]);
 	setCost(cost);
-
-}
-
-Tower::Tower(Tower& t) : sf::Sprite(t.getTexture())
-{
-	setMaxHealth(t.getMaxHealth());
-	setHealth(getMaxHealth());
-	setAbilitySpeed(t.getAbilitySpeed());
-	setLocation(t.getLocationX(), t.getLocationY());
 }
 
 //No dynamic memory to get rid of, nothing extra to do

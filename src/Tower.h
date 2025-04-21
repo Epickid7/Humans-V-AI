@@ -13,7 +13,9 @@ class Tower : public Character
 
 public:
 
-	Tower(const sf::Texture &texture, int maxHealth = 10, double abilitySpeed = 1, int location[2] = nullptr, int cost = 0);
+	Tower(int x = 0, int y = 0, double current = 0, double max = 0, double power = 0, double speed = 0, string type = "",
+		const sf::Texture& texture = sf::Texture(ASSETS_PATH "/images/default.png"), int cost = 0) 
+		: Character(x, y, current, max, power, speed, type, texture);
 
 	Tower(Tower &t);
 	~Tower();
@@ -25,36 +27,6 @@ public:
 	virtual void destroyTower(void);
 
 #pragma region getters
-
-	int getHealth(void) const
-	{
-		return health;
-	}
-
-	int getMaxHealth(void) const
-	{
-		return maxHealth;
-	}
-
-	double getAbilitySpeed() const
-	{
-		return abilitySpeed;
-	}
-
-	int getLocationX() const
-	{
-		return location[0];
-	}
-
-	int getLocationY() const
-	{
-		return location[1];
-	}
-
-	int  getAbilityPower() const
-	{
-		return abilityPower;
-	}
 	
 	int getCost() const
 	{
@@ -66,44 +38,6 @@ public:
 #pragma region setters
 	//0 if invalid, 1 for valid/updated
 	
-	//Must be nonnegative and less than max health
-	bool setHealth(int newHealth)
-	{
-		if (newHealth > maxHealth || newHealth < 0) return 0;
-		else
-		{
-			health = newHealth;
-			return 1;
-		}
-	}
-	//Must be nonnegative
-	bool setMaxHealth(int newMaxHealth)
-	{
-		if (newMaxHealth < 0) return 0;
-		else
-		{
-			maxHealth = newMaxHealth;
-			return 1;
-		}
-	}
-	//Must be nonnegative
-	bool setAbilitySpeed(double newAbilitySpeed)
-	{
-		if (newAbilitySpeed < 0) return 0;
-		else
-		{
-			abilitySpeed = newAbilitySpeed;
-			return 1;
-		}
-	}
-	//No conditions?? boundaries are checked elsewhere
-	bool setLocation(int x, int y)
-	{
-		location[0] = x;
-		location[1] = y;
-		return 1;
-	}
-	//Must be nonnegative
 	bool setCost(int cost)
 	{
 		if (cost < 0) return 0;
@@ -115,13 +49,8 @@ public:
 	}
 #pragma endregion
 
-private:
+protected:
 	int cost;
-	int health;
-	int maxHealth;
-	double abilitySpeed;
-	int location[2];
-	double abilityPower;
 
 };
 
