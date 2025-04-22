@@ -10,10 +10,6 @@ Barricade::Barricade(int x, int y) : Tower(x, y, 20, 20, 0, 1, AttackType::NEITH
 
 }
 
-void Barricade::useAbility()
-{
-}
-
 void Barricade::destroyTower(void)
 {
 }

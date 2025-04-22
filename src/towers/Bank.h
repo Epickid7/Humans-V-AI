@@ -16,9 +16,6 @@ public:
 
 	Bank(int x, int y);
 
-	//DOES NOT DO ANYTHING
-	void useAbility();
-
 	void useAbility(Player &p);
 
 	void destroyTower(void);

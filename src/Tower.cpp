@@ -35,6 +35,10 @@ Tower& Tower::operator=(Tower& rhs)
 	return *this;
 }
 
+void Tower::useAbility()
+{
+}
+
 //Add any extra on destroy effects for the gameplay
 void Tower::destroyTower(void)
 {
