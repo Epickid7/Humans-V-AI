@@ -12,7 +12,7 @@ void Bank::useAbility()
 
 void Bank::useAbility(Player &p)
 {
-	//money += 20;
+	p.addMoney(getAbilityPower());
 }
 
 void Bank::destroyTower(void)
