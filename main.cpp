@@ -74,10 +74,12 @@ int main()
     vector<sf::Sprite> towerVector;
     //vector<Tower> towerVectr;
    
-
+    sf::Music music(ASSETS_PATH "/music/Ultimate Battle.wav");
+    music.play();
     // Start the game loop
     while (window.isOpen())
     {
+        
         // Process events
         while (const std::optional event = window.pollEvent())
         {
