@@ -8,6 +8,11 @@ Tower::Tower(int x = 0, int y = 0, double current = 0, double max = 0, double po
 	setCost(cost);
 }
 
+Tower::Tower(Tower& t)
+{
+	cost = t.getCost();
+}
+
 //No dynamic memory to get rid of, nothing extra to do
 Tower::~Tower()
 {
