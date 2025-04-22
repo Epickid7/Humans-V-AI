@@ -8,12 +8,12 @@ void TowerSelect::displayTowerList(sf::RenderWindow& window)
 
     sf::Text text1(font, "Bank (1)", 30);
     sf::Text text2(font, "Barricade (2)", 30);
-    sf::Text text3(font, "Landmine (3)", 30);
-    sf::Text text4(font, "Mortar (4)", 30);
+    sf::Text text3(font, "/Landmine (3)", 30);
+    sf::Text text4(font, "/Mortar (4)", 30);
     sf::Text text5(font, "People (5)", 30);
-    sf::Text text6(font, "Rifleman (6)", 30);
-    sf::Text text7(font, "Stickman (7)", 30);
-    sf::Text text8(font, "Tank (8)", 30);
+    sf::Text text6(font, "/Rifleman (6)", 30);
+    sf::Text text7(font, "/Stickman (7)", 30);
+    sf::Text text8(font, "/Tank (8)", 30);
     text1.setPosition(sf::Vector2f(0, 0*window.getSize().y/x +window.getSize().y/k));
     text2.setPosition(sf::Vector2f(0, 1*window.getSize().y / x + window.getSize().y / k));
     text3.setPosition(sf::Vector2f(0, 2*window.getSize().y / x + window.getSize().y / k));
