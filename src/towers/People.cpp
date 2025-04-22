@@ -19,7 +19,7 @@ void People::useAbility()
 
 void People::useAbility(std::vector<Projectile>& projs)
 {
-	projs.push_back(new Projectile(brickTexture, getAbilityPower(), 1)));
+	projs.push_back(new Projectile(sf::Vector2f(getPosition()), brickTexture, getAbilityPower(), 1)));
 }
 
 void People::destroyTower(void)
