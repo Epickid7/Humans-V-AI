@@ -25,15 +25,7 @@ Tower& Tower::operator=(Tower& rhs)
 		return *this;
 	}
 
-	//this->health = rhs.health;
-	this->maxHealth = rhs.maxHealth;
-	this->abilityPower = rhs.abilityPower;
-	this->abilitySpeed = rhs.abilitySpeed;
-	this->cost = rhs.cost;
-	this->location[0] = rhs.location[0];
-	this->location[1] = rhs.location[1];
-	//this->attackType = rhs.attackType;
-	//this->currentHealth = rhs.currentHealth;
+	cost = rhs.getCost();
 
 	sf::Sprite::operator=(rhs);
 
