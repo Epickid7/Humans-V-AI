@@ -84,8 +84,65 @@ void TowerSelect::checkForTowerSelect()
     }
 }
 
-bool TowerSelect::checkForTowerPlace(GridTile** gameBoard[ROW][COLUMN], sf::Vector2f& mouse, std::vector<sf::Sprite>& towerVector)
+bool TowerSelect::checkForTowerPlace(sf::RenderWindow& window,GridTile* gameBoard[ROW][COLUMN], sf::Vector2f& mouse, std::vector<Tower>& towerVector)
 {
+    Bank* newBank = nullptr;
+    Barricade* newBarricade = nullptr;
+
+    //NEED TO CHECK IF THERE IS ALREADY A TOWER PLACED IN A SQUARE SOMEWHERE (TODO)
+
+    if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left))
+    {
+        for (int i = 0; i < ROW; i++) {
+            for (int j = 0; j < COLUMN; j++) {
+                // we need overloaded assignment operator
+                //declare with texture?
+
+                if ((*gameBoard[i][j]).getGlobalBounds().contains(sf::Vector2f(mouse.x,
+                    mouse.y))) {
+
+                    //switch statement for which type of tower
+                    switch (this->curTower) {
+                    case 1:
+                        newBank = new Bank((*gameBoard[i][j]).getPosition().x, (*gameBoard[i][j]).getPosition().y);
+                        towerVector.push_back(*newBank);
+                        break;
+                    case 2:
+                        newBarricade = new Barricade((*gameBoard[i][j]).getPosition().x, (*gameBoard[i][j]).getPosition().y);
+                        towerVector.push_back(*newBarricade);
+                        break;
+                    case 3:
+                        //newBank = new Bank;
+                        break;
+                    case 4:
+                        //newBank = new Bank;
+                        break;
+                    case 5:
+                        //newBank = new Bank;
+                        break;
+                    case 6:
+                        //newBank = new Bank;
+                        break;
+                    case 7:
+                        //newBank = new Bank;
+                        break;
+                    case 8:
+                        //newBank = new Bank;
+                        break;
+                    }
+
+                    
+                    /*sprite = new sf::Sprite(s);
+                    (*sprite).setPosition({ (*gameBoard[i][j]).getPosition().x, (*gameBoard[i][j]).getPosition().y });
+                    (*sprite).setColor(sf::Color::White);
+                    towerVector.push_back(*sprite);*/
+
+                    
+
+                }
+            }
+        }
+    }
     return false;
 }
 
