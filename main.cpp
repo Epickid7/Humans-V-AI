@@ -73,6 +73,9 @@ int main()
     //will change to tower type
     vector<sf::Sprite> towerVector;
     vector<Tower> towerVectr;
+    //vector<Tower> towerVector;
+
+    std::vector<Projectile> projectiles;
    
     sf::Music music(ASSETS_PATH "/music/Ultimate Battle.wav");
     music.play();
