@@ -64,7 +64,7 @@ void TowerSelect::checkForTowerSelect()
     }
     else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Num5)) { //People
         this->curTower = 5;
-       // towerToPlace = new People(0, 0);
+        towerToPlace = new People(0, 0);
         std::cout << "Pressing Key 5" << std::endl;
     }
     else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Num6)) { //Rifleman
