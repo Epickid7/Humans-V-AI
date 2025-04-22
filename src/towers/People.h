@@ -19,8 +19,6 @@ public:
 
 	People(int x, int y);
 
-	void useAbility();
-
 	void useAbility(std::vector<Projectile>& projs);
 
 	void destroyTower(void);
