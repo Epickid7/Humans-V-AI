@@ -15,6 +15,8 @@
 class People : public Tower
 {
 public:
+	People();
+
 	People(int x, int y);
 
 	void useAbility();

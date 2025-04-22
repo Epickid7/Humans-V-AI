@@ -75,6 +75,8 @@ int main()
     //vector<Tower> towerVector;
 
     std::vector<Projectile> projectiles;
+
+    People p(0, 0)
    
     sf::Music music(ASSETS_PATH "/music/Ultimate Battle.wav");
     music.setVolume(10.f);
