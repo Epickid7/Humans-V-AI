@@ -51,7 +51,6 @@ public:
 
 protected:
 	int cost;
-
 };
 
 
