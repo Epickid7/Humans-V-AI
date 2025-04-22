@@ -8,6 +8,11 @@ Tower::Tower(int x = 0, int y = 0, double current = 0, double max = 0, double po
 	setCost(cost);
 }
 
+Tower::Tower(Tower& t)
+{
+	this->cost = t.cost;
+}
+
 //No dynamic memory to get rid of, nothing extra to do
 Tower::~Tower()
 {
@@ -33,6 +38,10 @@ Tower& Tower::operator=(Tower& rhs)
 	sf::Sprite::operator=(rhs);
 
 	return *this;
+}
+
+void Tower::useAbility()
+{
 }
 
 //Add any extra on destroy effects for the gameplay
