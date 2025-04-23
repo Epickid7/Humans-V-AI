@@ -74,6 +74,8 @@ int main()
     vector<sf::Sprite> towerVector;
     //vector<Tower> towerVector;
 
+    Bank bank;
+
     std::vector<Projectile> projectiles;
 
    
@@ -90,6 +92,8 @@ int main()
     crunch.play();
 
     // Start the game loop
+
+    //clk.start();
 
     while (window.isOpen())
     {
@@ -166,7 +170,7 @@ int main()
             window.draw(towerVector.at(i));
         }
 
-       //window.draw(s);
+        //std::cout << clk.getElapsedTime().asMilliseconds() << std::endl;
 
         // Update the window
         window.display();
