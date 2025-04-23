@@ -21,10 +21,10 @@ int main()
 {
     // Create the main window
     sf::RenderWindow window(sf::VideoMode({800, 600}), "SFML window");
-
+    window.setVerticalSyncEnabled(true);
     //set mouse to window position
     sf::Vector2f mouse = window.mapPixelToCoords(sf::Mouse::getPosition(window));
-
+    
     sf::Clock clk;
 
     //Maximize window
@@ -35,7 +35,7 @@ int main()
    
     // Create Player object to store game data
     Player player(300);
-    const sf::Font font = Utilities::getAttributedFont(FontStyle::SemiBoldItalic, "SF-Pro");
+    const sf::Font font = Utilities::getAttributedFont(FontStyle::Heavy, "SF-Pro");
 
     /*MobQueue mobs;
     mobs.loadFromLevelFile("../MobList/LevelOne.csv");*/
@@ -97,7 +97,6 @@ int main()
             // Close window: exit
             if (event->is<sf::Event::Closed>())
                 window.close();
-
         }
 
         // Clear screen
@@ -136,7 +135,7 @@ int main()
         }
 
         //Draw money
-        sf::Text money(font, sf::String( std::to_string(player.getMoney())), 30);
+        sf::Text money(font, sf::String( std::to_string(player.getMoney())), 35);
         money.setPosition(sf::Vector2f(0, 0 ));
         window.draw(money);
 
