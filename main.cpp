@@ -54,6 +54,7 @@ int main()
     
     Tower c;
     //Bank b(0,0);
+
     People b;
 
     //test texture

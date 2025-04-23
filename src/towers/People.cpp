@@ -12,7 +12,7 @@ People::People(int x, int y) : Tower(x, y, 10, 10, 2, 1, AttackType::PROJECTILE,
 
 void People::useAbility(std::vector<Projectile>& projs)
 {
-	projs.push_back(new Projectile(sf::Vector2f(getPosition()), brickTexture, getAbilityPower(), 1)));
+	projs.push_back(*(new Projectile(this->getPosition(), sf::Texture(brickTexture), getAbilityPower(), 1)));
 }
 
 void People::destroyTower(void)
