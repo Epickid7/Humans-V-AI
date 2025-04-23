@@ -83,7 +83,9 @@ int main()
     effect.play();
     sf::Music crunch(ASSETS_PATH "/music/cracker_munch.wav");
     crunch.play();
+
     // Start the game loop
+
     while (window.isOpen())
     {
         
