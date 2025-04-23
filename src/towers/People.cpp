@@ -1,6 +1,5 @@
 #include "People.h"
-#include "People.h"
-#include "People.h"
+
 
 People::People() : Tower(0, 0, 10, 10, 2, 1, AttackType::PROJECTILE, sf::Texture(peopleTexture), 60)
 {

@@ -12,6 +12,8 @@
 #include "src/Grid/GridTile.hpp"
 #include "src/TowerSelect/TowerSelect.h"
 #include "src/Tower.h"
+#include "src/towers/Bank.h"
+#include "src/towers/People.h"
 
 
 // Needed to maximize the screen on launch
@@ -49,6 +51,9 @@ int main()
     sf::Texture bankTest(ASSETS_PATH "/images/bank.png");
     sf::Sprite s(bankTest);
     
+    Tower c;
+    //Bank b(0,0);
+    People b;
 
     //test texture
     sf::Texture t(ASSETS_PATH "/images/grassTile.png",false, sf::IntRect({ 0,0 },
@@ -132,6 +137,8 @@ int main()
         money.setPosition(sf::Vector2f(0, 0 ));
         window.draw(money);
 
+        
+
         //draw menu for choosing tower
         selectMenu.displayTowerList(window);
         selectMenu.checkForTowerSelect();
@@ -152,8 +159,8 @@ int main()
                 window.draw(*gameBoard[i][j]);
             }
         }
-        for (int i = 0; i < towerVector.size(); i++) {
-            window.draw(towerVector.at(i));
+        for (int i = 0; i < towerVectr.size(); i++) {
+            window.draw(towerVectr.at(i));
         }
 
        //window.draw(s);

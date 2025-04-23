@@ -1,6 +1,6 @@
 #include "Bank.h"
 
-Bank::Bank(int x, int y) : Tower(x, y, 10, 10, 20, 1, AttackType::NEITHER, sf::Texture(bankTexture), 50)
+Bank::Bank(double x, double y) : Tower(x, y, 10, 10, 20, 1, AttackType::NEITHER, sf::Texture(bankTexture), 50)
 {
 
 }

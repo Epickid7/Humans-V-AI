@@ -12,9 +12,9 @@
 class Bank : public Tower
 {
 public:
-	Bank();	
+	
 
-	Bank(int x, int y);
+	Bank(double x, double y);
 
 	void useAbility(Player &p);
 

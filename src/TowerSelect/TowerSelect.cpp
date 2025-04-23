@@ -84,9 +84,10 @@ void TowerSelect::checkForTowerSelect()
     }
 }
 
-bool TowerSelect::checkForTowerPlace(sf::RenderWindow& window,GridTile* gameBoard[ROW][COLUMN], sf::Vector2f& mouse, std::vector<Tower>& towerVector)
+bool TowerSelect::checkForTowerPlace(sf::RenderWindow& window,GridTile* gameBoard[ROW][COLUMN], sf::Vector2f& mouse, std::vector<Tower> &towerVector)
 {
-    Bank* newBank = nullptr;
+    //Bank* newBank = nullptr;
+    //Bank b(0,0);
     Barricade* newBarricade = nullptr;
 
     //NEED TO CHECK IF THERE IS ALREADY A TOWER PLACED IN A SQUARE SOMEWHERE (TODO)
@@ -104,11 +105,12 @@ bool TowerSelect::checkForTowerPlace(sf::RenderWindow& window,GridTile* gameBoar
                     //switch statement for which type of tower
                     switch (this->curTower) {
                     case 1:
-                        newBank = new Bank((*gameBoard[i][j]).getPosition().x, (*gameBoard[i][j]).getPosition().y);
-                        towerVector.push_back(*newBank);
+                        //b.setPosition({ (*gameBoard[i][j]).getPosition().x, (*gameBoard[i][j]).getPosition().y });
+                        //newBank = new Bank((*gameBoard[i][j]).getPosition().x, (*gameBoard[i][j]).getPosition().y);
+                        //towerVector.push_back(b);
                         break;
                     case 2:
-                        newBarricade = new Barricade((*gameBoard[i][j]).getPosition().x, (*gameBoard[i][j]).getPosition().y);
+                        //newBarricade = new Barricade((*gameBoard[i][j]).getPosition().x, (*gameBoard[i][j]).getPosition().y);
                         towerVector.push_back(*newBarricade);
                         break;
                     case 3:
