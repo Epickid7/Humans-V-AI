@@ -77,12 +77,15 @@ int main()
     std::vector<Projectile> projectiles;
    
     sf::Music music(ASSETS_PATH "/music/Ultimate Battle.wav");
-    music.setVolume(10.f);
+    music.setVolume(35.f);
+    music.setPitch(1.2f);
     music.play();
     music.setLooping(true);
     sf::Music effect(ASSETS_PATH "/music/brick_grate.wav");
+    effect.setPitch(0.6f);
     effect.play();
     sf::Music crunch(ASSETS_PATH "/music/cracker_munch.wav");
+    crunch.setPitch(2.f);
     crunch.play();
     // Start the game loop
     while (window.isOpen())
