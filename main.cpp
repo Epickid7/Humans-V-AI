@@ -79,6 +79,7 @@ int main()
     sf::Music music(ASSETS_PATH "/music/Ultimate Battle.wav");
     music.setVolume(10.f);
     music.play();
+    music.setLooping(true);
     sf::Music effect(ASSETS_PATH "/music/brick_grate.wav");
     effect.play();
     sf::Music crunch(ASSETS_PATH "/music/cracker_munch.wav");
