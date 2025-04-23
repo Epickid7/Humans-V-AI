@@ -21,5 +21,5 @@ public:
 	void destroyTower(void);
 
 protected:
-	const string bankTexture = ASSETS_PATH "/images/bank.png";
+	sf::Texture bankTexture;
 };
