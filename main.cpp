@@ -14,6 +14,7 @@
 #include "src/Tower.h"
 #include "src/towers/Bank.h"
 #include "src/towers/People.h"
+#include "src/Player.h"
 
 
 // Needed to maximize the screen on launch
