@@ -22,7 +22,7 @@ public:
 
 	Tower& operator=(Tower& rhs);
 
-	virtual void useAbility() = 0;
+	virtual void useAbility();
 
 	virtual void destroyTower(void);
 

@@ -15,8 +15,6 @@ public:
 	
 	Barricade(int x, int y);
 
-	void useAbility();
-
 	void destroyTower(void);
 
 protected:

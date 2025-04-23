@@ -49,17 +49,17 @@ void TowerSelect::checkForTowerSelect()
     }
     else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Num2)) { //Barricade
         this->curTower = 2;
-       /* towerToPlace = new Barricade(0, 0);*/
+      
         std::cout << "Pressing Key 2" << std::endl;
     }
     else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Num3)) { //Landmine
         this->curTower = 3;
-        /*towerToPlace = new Bank(0, 0);*/
+   
         std::cout << "Pressing Key 3" << std::endl;
     }
     else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Num4)) { //Mortar
         this->curTower = 4;
-        /*towerToPlace = new Bank(0, 0);*/
+     
         std::cout << "Pressing Key 4" << std::endl;
     }
     else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Num5)) { //People
@@ -69,17 +69,17 @@ void TowerSelect::checkForTowerSelect()
     }
     else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Num6)) { //Rifleman
         this->curTower = 6;
-       /* towerToPlace = new Bank(0, 0);*/
+       
         std::cout << "Pressing Key 6" << std::endl;
     }
     else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Num7)) { //Stickman
         this->curTower = 7;
-       /* towerToPlace = new Bank(0, 0);*/
+     
         std::cout << "Pressing Key 7" << std::endl;
     }
     else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Num8)) { //Tank
         this->curTower = 8;
-       /* towerToPlace = new Bank(0, 0);*/
+    
         std::cout << "Pressing Key 8" << std::endl;
     }
 }
