@@ -11,6 +11,7 @@
 #include "src/MobQueue/MobQueue.h"
 #include "src/Grid/GridTile.hpp"
 #include "src/TowerSelect/TowerSelect.h"
+#include "src/Character.h"
 #include "src/Tower.h"
 #include "src/towers/Bank.h"
 #include "src/towers/People.h"
@@ -53,9 +54,9 @@ int main()
     sf::Sprite s(bankTest);
     
     Tower c;
-    //Bank b(0,0);
+   // Bank b(0,0);
 
-    People b;
+    //People b;
 
     //test texture
     sf::Texture t(ASSETS_PATH "/images/grassTile.png",false, sf::IntRect({ 0,0 },
