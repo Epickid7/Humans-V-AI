@@ -1,3 +1,14 @@
+/*
+Authors: Ian Van De Bogert, Jacob Parnell, Jayren Calub, Parker Mulroy
+Data: 4/23/25
+Project: PA9 group graphical project
+
+Description: The program uses the SFML 3.0 library to create a tower defense game with graphics. The theme of this game is "Humans vs AI", and currently has three placeable
+sprites of towers. They do not work as intended, but they can be placed on the game board. 
+*/
+
+
+
 // Include system libraries
 #include <iostream>
 
