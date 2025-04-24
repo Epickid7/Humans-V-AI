@@ -6,6 +6,8 @@
 | Jayren Calub   | 2           | Machine and Character Class | Enable ...       |
 | Parker Mulroy   | 6           | Tower Class | Enable ...       |
 
+Link to YouTube Video: https://www.youtube.com/watch?v=b4LyNsbVBn8
+
 ## Tools Used
 - SFML (API)
 - Visual Studio (IDE)
