@@ -27,6 +27,8 @@ int main()
     
     sf::Clock clk;
 
+    //People p(0,0);
+
     //Maximize window
     ::ShowWindow(window.getNativeHandle(), SW_MAXIMIZE);
 
@@ -48,9 +50,38 @@ int main()
         { 67,120}));
 
 
-    sf::Texture bankTest(ASSETS_PATH "/images/bank.png");
-    sf::Sprite s(bankTest);
-    
+    sf::Texture bankText(ASSETS_PATH "/images/bank.png");
+
+    sf::Texture barricadeText(ASSETS_PATH "/images/barricade.png");
+
+    //sf::Texture bankTest(ASSETS_PATH "/images/bank.png");
+
+    //sf::Texture bankTest(ASSETS_PATH "/images/bank.png");
+
+    sf::Texture peopleText(ASSETS_PATH "/images/people.png");
+
+    //sf::Texture bankTest(ASSETS_PATH "/images/bank.png");
+
+    //sf::Texture bankTest(ASSETS_PATH "/images/bank.png");
+
+    //sf::Texture bankTest(ASSETS_PATH "/images/bank.png");
+
+    sf::Sprite bank(bankText);
+
+    sf::Sprite barricade(barricadeText);
+
+   //sf::Sprite s(bankTest);
+
+    //sf::Sprite s(bankTest);
+
+    sf::Sprite people(peopleText);
+
+    //sf::Sprite s(bankTest);
+
+    //sf::Sprite s(bankTest);
+
+    //sf::Sprite s(bankTest);
+   
 
     //test texture
     sf::Texture t(ASSETS_PATH "/images/grassTile.png",false, sf::IntRect({ 0,0 },
@@ -70,13 +101,13 @@ int main()
         }
     }
 
+    int lastKeyPressed = 0;
 
     //vector of sprites
     //will change to tower type
     vector<sf::Sprite> towerVector;
-    //vector<Tower> towerVector;
-
-    Bank bank;
+  
+    
 
     std::vector<Projectile> projectiles;
 
@@ -162,12 +193,59 @@ int main()
                         mouse.y))) {
 
                         //test code for inserting tower
+                        switch (lastKeyPressed) {
+                        case 1:
+                            sprite = new sf::Sprite(bank);
+                            (*sprite).setPosition({ (*gameBoard[i][j]).getPosition().x, (*gameBoard[i][j]).getPosition().y });
+                            //(*sprite).setColor(sf::Color::White);
+                            towerVector.push_back(*sprite);
+                            break;
+                        case 2:
+                            sprite = new sf::Sprite(barricade);
+                            (*sprite).setPosition({ (*gameBoard[i][j]).getPosition().x, (*gameBoard[i][j]).getPosition().y });
+                            //(*sprite).setColor(sf::Color::White);
+                            towerVector.push_back(*sprite);
+                            break;
+                        case 3:
+                            //sprite = new sf::Sprite(bank);
+                            //(*sprite).setPosition({ (*gameBoard[i][j]).getPosition().x, (*gameBoard[i][j]).getPosition().y });
+                            ////(*sprite).setColor(sf::Color::White);
+                            //towerVector.push_back(*sprite);
+                            break;
+                        case 4:
+                            //sprite = new sf::Sprite(bank);
+                            //(*sprite).setPosition({ (*gameBoard[i][j]).getPosition().x, (*gameBoard[i][j]).getPosition().y });
+                            ////(*sprite).setColor(sf::Color::White);
+                            //towerVector.push_back(*sprite);
+                            break;
+                        case 5:
+                            sprite = new sf::Sprite(peopleText);
+                            (*sprite).setPosition({ (*gameBoard[i][j]).getPosition().x, (*gameBoard[i][j]).getPosition().y });
+                            //(*sprite).setColor(sf::Color::White);
+                            towerVector.push_back(*sprite);
+                            break;
+                        case 6:
+                            //sprite = new sf::Sprite(bank);
+                            //(*sprite).setPosition({ (*gameBoard[i][j]).getPosition().x, (*gameBoard[i][j]).getPosition().y });
+                            ////(*sprite).setColor(sf::Color::White);
+                            //towerVector.push_back(*sprite);
+
+                            break;
+                        case 7:
+                            //sprite = new sf::Sprite(bank);
+                            //(*sprite).setPosition({ (*gameBoard[i][j]).getPosition().x, (*gameBoard[i][j]).getPosition().y });
+                            ////(*sprite).setColor(sf::Color::White);
+                            //towerVector.push_back(*sprite);
+                            break;
+                        case 8:
+                            //sprite = new sf::Sprite(bank);
+                            //(*sprite).setPosition({ (*gameBoard[i][j]).getPosition().x, (*gameBoard[i][j]).getPosition().y });
+                            ////(*sprite).setColor(sf::Color::White);
+                            //towerVector.push_back(*sprite);
+                            break;
+                        }
+                        
                        
-                        //sprite.setPosition(sf::Vector2f(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y));
-                        sprite = new sf::Sprite(s);
-                        (*sprite).setPosition({ (*gameBoard[i][j]).getPosition().x, (*gameBoard[i][j]).getPosition().y });
-                        (*sprite).setColor(sf::Color::White);
-                        towerVector.push_back(*sprite);
                         
                        
                     }
@@ -183,14 +261,16 @@ int main()
         //draw menu for choosing tower
         selectMenu.displayTowerList(window);
         selectMenu.checkForTowerSelect();
+        lastKeyPressed = selectMenu.getCurTower();
         //check if user is clicking a tile
-
+        //selectMenu.checkForTowerPlace(window, gameBoard, mouse, towerVector);
+       
         //check if user has necessary funds for selected tower
 
         
 
         mouse = window.mapPixelToCoords(sf::Mouse::getPosition(window));
-
+        
 
         for (int i = 0; i < ROW; i++) {
             for (int j = 0; j < COLUMN; j++) {
@@ -199,11 +279,11 @@ int main()
                 window.draw(*gameBoard[i][j]);
             }
         }
+       
         for (int i = 0; i < towerVector.size(); i++) {
             window.draw(towerVector.at(i));
         }
-
-        //std::cout << clk.getElapsedTime().asMilliseconds() << std::endl;
+        
 
         // Update the window
         window.display();
