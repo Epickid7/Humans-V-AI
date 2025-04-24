@@ -23,6 +23,8 @@ sprites of towers. They do not work as intended, but they can be placed on the g
 #include "src/Grid/GridTile.hpp"
 #include "src/TowerSelect/TowerSelect.h"
 #include "src/Tower.h"
+#include "src/Machine.h"
+#include "src/machines/Terminator.hpp"
 
 
 // Needed to maximize the screen on launch
@@ -97,6 +99,7 @@ int main()
     //test texture
     sf::Texture t(ASSETS_PATH "/images/grassTile.png",false, sf::IntRect({ 0,0 },
         { 67,120 }));
+    sf::Texture toasterTexutre(ASSETS_PATH "/images/toaster.png");
     sf::Sprite * sprite = new sf::Sprite(t);
     (*sprite).setColor(sf::Color::Transparent);
     
@@ -117,59 +120,46 @@ int main()
     //vector of sprites
     //will change to tower type
     vector<sf::Sprite> towerVector;
-  
-    
+    vector<sf::Sprite> machineVector;
+    //vector<Tower> towerVector;
+
+    // spawn toasters
+    sf::Sprite* machine1 = new sf::Sprite(toasterTexutre);
+    sf::Sprite* machine2 = new sf::Sprite(toasterTexutre);
+    sf::Sprite* machine3 = new sf::Sprite(toasterTexutre);
+    sf::Sprite* machine4 = new sf::Sprite(toasterTexutre);
+    sf::Sprite* machine5 = new sf::Sprite(toasterTexutre);
+
+    machine1->setPosition({ 700, 0 });
+    machine2->setPosition({ 700, 115 });
+    machine3->setPosition({ 700, 230 });
+    machine4->setPosition({ 700, 345 });
+    machine5->setPosition({ 700, 460 });
+
+    machineVector.push_back(*machine1);
+    machineVector.push_back(*machine2);
+    machineVector.push_back(*machine3);
+    machineVector.push_back(*machine4);
+    machineVector.push_back(*machine5);
 
     std::vector<Projectile> projectiles;
 
    
-    
-    /*sf::Music effect(ASSETS_PATH "/music/brick_grate.wav");
-    effect.setPitch(0.6f);
-    effect.play();
-    sf::Music crunch(ASSETS_PATH "/music/cracker_munch.wav");
-    crunch.setPitch(2.f);
-    crunch.play();*/
-
-    
-    // Main Menu loop
-    
-    // Process events
-    while (const std::optional event = window.pollEvent())
-    {
-        // Close window: exit
-        if (event->is<sf::Event::Closed>())
-            window.close();
-    }
-    // Clear screen
-    window.clear();
-    sf::Vector2u windowSize = window.getSize();
-
-    sf::Text title(font, "HUMANS VS. AI", 30U);
-    title.setFillColor(sf::Color::Red);
-    title.setPosition(sf::Vector2f());
-    sf::Text instruct(font, "This is a TOWER DEFENSE game. Earn money by placing banks,\n then use that money to buy other towers to defend your base\n from the evil AI-controlled robots. Fight for your survival...\n\n(ONLY HIT ENTER OR THIS PROGRAM WILL CRASH. DO NOT CLICK THE SCREEN!!!)", 15U);
-    instruct.setPosition(sf::Vector2f(100,200));
-    sf::Text game(font, "PRESS ENTER TO CONTINUE", 30U);
-    game.setPosition(sf::Vector2f(300,350));
-    game.setFillColor(sf::Color::Blue);
-    bool menu = true;
-
-    while (!sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Enter) && window.isOpen())
-        {
-        // Update window size after maximizing
-        window.clear(sf::Color::Black); // set background to balck
-            window.draw(title); // draws the title
-            window.draw(instruct); // draws the instructions
-            window.draw(game); // draws the continuation instructions
-            window.display();
-        }
-       
     sf::Music music(ASSETS_PATH "/music/Ultimate Battle.wav");
     music.setVolume(35.f);
     music.setPitch(1.2f);
     music.play();
     music.setLooping(true);
+    sf::Music effect(ASSETS_PATH "/music/brick_grate.wav");
+    effect.setPitch(0.6f);
+    effect.play();
+    sf::Music crunch(ASSETS_PATH "/music/cracker_munch.wav");
+    crunch.setPitch(2.f);
+    crunch.play();
+
+    // Start the game loop
+
+    //clk.start();
 
     // GAMEPLAY LOOP BEGINS HERE
     while (window.isOpen())
@@ -188,8 +178,11 @@ int main()
         //get clock time for mob queue
         
 
-        //will spawn every ten seconds
-        if (clk.getElapsedTime().asMilliseconds() % 10000 == 0) {
+        //will spawn every five seconds
+
+        
+        if (clk.getElapsedTime().asMilliseconds() % 5000 == 0) {
+            
             //mobs.getMachineType();
         }
 
@@ -294,7 +287,14 @@ int main()
         for (int i = 0; i < towerVector.size(); i++) {
             window.draw(towerVector.at(i));
         }
-        
+        for (int i = 0; i < machineVector.size(); i++) {
+            machineVector.at(i).move({ -0.5, 0 });
+            window.draw(machineVector.at(i));
+        }
+
+        //// testing terminator movement
+        //terminator.moveLeft();
+        //window.draw(terminator);
 
         // Update the window
         window.display();
