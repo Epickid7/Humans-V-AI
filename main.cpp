@@ -81,23 +81,17 @@ int main()
     std::vector<Projectile> projectiles;
 
    
-    sf::Music music(ASSETS_PATH "/music/Ultimate Battle.wav");
-    music.setVolume(35.f);
-    music.setPitch(1.2f);
-    music.play();
-    music.setLooping(true);
-    sf::Music effect(ASSETS_PATH "/music/brick_grate.wav");
+    
+    /*sf::Music effect(ASSETS_PATH "/music/brick_grate.wav");
     effect.setPitch(0.6f);
     effect.play();
     sf::Music crunch(ASSETS_PATH "/music/cracker_munch.wav");
     crunch.setPitch(2.f);
-    crunch.play();
+    crunch.play();*/
 
-    // Start the game loop
-
-    //clk.start();
-    // 
+    
     // Main Menu loop
+    
     // Process events
     while (const std::optional event = window.pollEvent())
     {
@@ -110,11 +104,13 @@ int main()
     sf::Vector2u windowSize = window.getSize();
 
     sf::Text title(font, "HUMANS VS. AI", 30U);
+    title.setFillColor(sf::Color::Red);
     title.setPosition(sf::Vector2f());
-    sf::Text instruct(font, "This is a TOWER DEFENSE game. Earn money by placing banks,\n then use that money to buy other towers to defend your base\n from the evil AI-controlled robots. Fight for your survival...\n ONLY HIT ENTER OR THIS PROGRAM WILL CRASH. DO NOT CLICK THE SCREEN!!!", 15U);
+    sf::Text instruct(font, "This is a TOWER DEFENSE game. Earn money by placing banks,\n then use that money to buy other towers to defend your base\n from the evil AI-controlled robots. Fight for your survival...\n\n(ONLY HIT ENTER OR THIS PROGRAM WILL CRASH. DO NOT CLICK THE SCREEN!!!)", 15U);
     instruct.setPosition(sf::Vector2f(100,200));
     sf::Text game(font, "PRESS ENTER TO CONTINUE", 30U);
     game.setPosition(sf::Vector2f(300,350));
+    game.setFillColor(sf::Color::Blue);
     bool menu = true;
 
     while (!sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Enter) && window.isOpen())
@@ -127,6 +123,12 @@ int main()
             window.display();
         }
        
+    sf::Music music(ASSETS_PATH "/music/Ultimate Battle.wav");
+    music.setVolume(35.f);
+    music.setPitch(1.2f);
+    music.play();
+    music.setLooping(true);
+
     // GAMEPLAY LOOP BEGINS HERE
     while (window.isOpen())
     {
