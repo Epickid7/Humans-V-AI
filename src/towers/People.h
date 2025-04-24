@@ -19,11 +19,17 @@ public:
 
 	People(int x, int y);
 
+	People(People& p);
+
+	People & operator=(People & p);
+
+
+
 	void useAbility(std::vector<Projectile>& projs);
 
 	void destroyTower(void);
 
 protected:
-	const string peopleTexture = ASSETS_PATH "/images/people.png";
-	const string brickTexture = ASSETS_PATH "/images/brick.png";
+	string peopleTexture = ASSETS_PATH "/images/people.png";
+	string brickTexture = ASSETS_PATH "/images/brick.png";
 };
