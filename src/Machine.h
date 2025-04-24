@@ -1,3 +1,5 @@
+#pragma once
+
 #include "Character.h"
 #include "Tower.h"
 
@@ -47,7 +49,3 @@ public:
 	virtual void useAbility(Tower& towerInGrid) = 0;
 	void moveLeft();
 };
-
-void Machine::moveLeft() {
-	move(sf::Vector2f(-1 * movementSpeed, 0));
-}

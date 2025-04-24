@@ -33,3 +33,7 @@ double Machine::getMovementSpeed() {
 bool Machine::getRange() {
 	return isInRange;
 }
+
+void Machine::moveLeft() {
+	move(sf::Vector2f(-1 * movementSpeed, 0));
+}
