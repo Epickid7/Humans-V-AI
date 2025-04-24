@@ -27,9 +27,11 @@ public:
 
 	void useAbility(std::vector<Projectile>& projs);
 
+	sf::Texture& getPeopleTexture(void);
+
 	void destroyTower(void);
 
 protected:
-	sf::Texture peopleTexture;
+	sf::Texture peopleTexture = sf::Texture(ASSETS_PATH "/images/people.png");
 	sf::Texture brickTexture;
 };

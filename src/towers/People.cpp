@@ -1,7 +1,7 @@
 #include "People.h"
 
 
-People::People() : Tower(0, 0, 10, 10, 2, 1, AttackType::PROJECTILE, sf::Texture(ASSETS_PATH "/images/people.png"), 60)
+People::People() : Tower(0, 0, 10, 10, 2, 1, AttackType::PROJECTILE, getPeopleTexture(), 60)
 {
 	peopleTexture.loadFromFile(ASSETS_PATH "/images/people.png");
 	brickTexture.loadFromFile(ASSETS_PATH "/images/brick.png");
@@ -45,6 +45,12 @@ People& People::operator=(People& p)
 void People::useAbility(std::vector<Projectile>& projs)
 {
 	projs.push_back(*(new Projectile(getPosition(), sf::Texture(brickTexture), getAbilityPower(), 1)));
+}
+
+sf::Texture& People::getPeopleTexture(void)
+{
+	// TODO: insert return statement here
+	return this->peopleTexture;
 }
 
 void People::destroyTower(void)
