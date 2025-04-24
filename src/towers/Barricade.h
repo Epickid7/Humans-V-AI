@@ -18,5 +18,5 @@ public:
 	void destroyTower(void);
 
 protected:
-	const string barricadeTexture = ASSETS_PATH "/images/barricade.png";
+	sf::Texture barricadeTexture;
 };

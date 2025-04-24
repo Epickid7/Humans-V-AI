@@ -76,6 +76,8 @@ int main()
     //vector<sf::Sprite> towerVector;
     vector<Tower> towerVector;
 
+    Bank bank;
+
     std::vector<Projectile> projectiles;
 
    
@@ -93,6 +95,8 @@ int main()
 
     // Start the game loop
 
+    //clk.start();
+
     while (window.isOpen())
     {
         
@@ -106,7 +110,7 @@ int main()
 
         // Clear screen
         window.clear();
-
+        
         //get clock time for mob queue
         
 
@@ -168,7 +172,7 @@ int main()
             window.draw(towerVector.at(i));
         }
 
-       //window.draw(s);
+        //std::cout << clk.getElapsedTime().asMilliseconds() << std::endl;
 
         // Update the window
         window.display();

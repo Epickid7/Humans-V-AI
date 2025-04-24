@@ -30,6 +30,6 @@ public:
 	void destroyTower(void);
 
 protected:
-	string peopleTexture = ASSETS_PATH "/images/people.png";
-	string brickTexture = ASSETS_PATH "/images/brick.png";
+	sf::Texture peopleTexture;
+	sf::Texture brickTexture;
 };
