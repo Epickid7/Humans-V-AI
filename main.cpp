@@ -27,6 +27,8 @@ int main()
     
     sf::Clock clk;
 
+    //People p(0,0);
+
     //Maximize window
     ::ShowWindow(window.getNativeHandle(), SW_MAXIMIZE);
 

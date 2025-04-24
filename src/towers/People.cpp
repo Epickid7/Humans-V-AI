@@ -29,17 +29,12 @@ People& People::operator=(People& p)
 {
 	// TODO: insert return statement here
 
-	this->abilityPower = p.abilityPower;
-	this->abilitySpeed = p.abilitySpeed;
-	this->attackType = p.attackType;
+	
 	this->brickTexture = p.brickTexture;
-	this->cost = cost;
-	this->currentHealth = currentHealth;
-	this->setPosition(p.getPosition());
-	this->texture = p.texture;
-	this->maxHealth = p.maxHealth;
+
 	this->peopleTexture = p.peopleTexture;
-	this->peopleTexture = p.peopleTexture;
+
+	Tower::operator=(p);
 
 	return *this;
 }

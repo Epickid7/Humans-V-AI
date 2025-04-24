@@ -121,8 +121,12 @@ bool TowerSelect::checkForTowerPlace(sf::RenderWindow& window, GridTile* gameBoa
                         //newBank = new Bank;
                         break;
                     case 5:
-                        newPeople = new People((int)(*gameBoard[i][j]).getPosition().x, (int)(*gameBoard[i][j]).getPosition().y);
-                        towerVector.push_back(*newPeople);
+                        newPeople = new People();
+                        //newPeople = new People((int)(*gameBoard[i][j]).getPosition().x, (int)(*gameBoard[i][j]).getPosition().y);
+                        newPeople->setPosition(sf::Vector2f( (*gameBoard[i][j]).getPosition().x, (*gameBoard[i][j]).getPosition().y ));
+                        if (newPeople) {
+                            towerVector.push_back(*newPeople);
+                        }
                         std::cout << "spawning People" << std::endl;
                         break;
                     case 6:
