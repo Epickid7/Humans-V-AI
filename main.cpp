@@ -12,6 +12,7 @@
 #include "src/Grid/GridTile.hpp"
 #include "src/TowerSelect/TowerSelect.h"
 #include "src/Tower.h"
+#include "src/Machine.h"
 
 
 // Needed to maximize the screen on launch
@@ -68,16 +69,13 @@ int main()
         }
     }
 
-
-    //vector of sprites
-    //will change to tower type
-    vector<sf::Sprite> towerVector;
+    // entity vectors
+    vector<sf::Sprite> towerVector; // sprites, switch to towers
     //vector<Tower> towerVector;
+    vector<Machine> machineVector; // machines
+    std::vector<Projectile> projectileVector; // projectiles
 
     Bank bank;
-
-    std::vector<Projectile> projectiles;
-
    
     sf::Music music(ASSETS_PATH "/music/Ultimate Battle.wav");
     music.setVolume(35.f);
