@@ -35,7 +35,7 @@ public:
 
 	//function to place tower - returns true if tower placed
 	//will also check if sufficient funds at some point
-	bool checkForTowerPlace(GridTile **gameBoard[ROW][COLUMN], sf::Vector2f &mouse, std::vector<sf::Sprite> &towerVector);
+	bool checkForTowerPlace(sf::RenderWindow& window, GridTile* gameBoard[ROW][COLUMN], sf::Vector2f& mouse, std::vector<Tower>& towerVector);
 
 	int getCurTower(void);
 private:

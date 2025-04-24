@@ -53,7 +53,8 @@ add_executable(SFML_Ex
     "src/machines/Flamethrower.hpp" 
     "src/machines/Alarm.hpp" 
     "src/machines/Tank.hpp" 
-    "src/Player.h" )
+    "src/Player.h" 
+    "src/TestCases.h")
 
 target_link_libraries(SFML_Ex
         SFML::System # Required

@@ -20,7 +20,7 @@ public:
 	}*/
 
 	Machine(int x, int y, double currentHP, double maxHP, double power, double speed, int type,
-		const sf::Texture& texture, int newPayout, double newDamage, double newMoveSpeed, bool inRange) 
+		sf::Texture& texture, int newPayout, double newDamage, double newMoveSpeed, bool inRange) 
 		: Character(x, y, currentHP, maxHP, power, speed, type, texture) {
 		payout = newPayout;
 		damage = newDamage;
