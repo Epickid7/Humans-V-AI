@@ -13,6 +13,7 @@
 #include "src/TowerSelect/TowerSelect.h"
 #include "src/Tower.h"
 #include "src/Machine.h"
+#include "src/machines/Terminator.hpp"
 
 
 // Needed to maximize the screen on launch
@@ -88,6 +89,9 @@ int main()
     sf::Music crunch(ASSETS_PATH "/music/cracker_munch.wav");
     crunch.setPitch(2.f);
     crunch.play();
+
+    // test terminator
+    Terminator terminator = Terminator(200, 200);
 
     // Start the game loop
 
@@ -168,6 +172,10 @@ int main()
         }
 
         //std::cout << clk.getElapsedTime().asMilliseconds() << std::endl;
+
+        // testing terminator movement
+        terminator.moveLeft();
+        window.draw(terminator);
 
         // Update the window
         window.display();

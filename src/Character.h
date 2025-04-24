@@ -30,6 +30,7 @@ public:
 	// constructor
 	Character(int x = 0, int y = 0, double current = 0, double max = 0, double power = 0, double speed = 0,
 		int type = AttackType::NEITHER, const sf::Texture& texture = sf::Texture(ASSETS_PATH "/images/default.png")) : Sprite(texture) {
+		setPosition(sf::Vector2f(x, y));
 		location[0] = x;
 		location[1] = y;
 		currentHealth = current;
