@@ -112,17 +112,18 @@ int main()
     vector<sf::Sprite> machineVector;
     //vector<Tower> towerVector;
 
+    // spawn toasters
     sf::Sprite* machine1 = new sf::Sprite(toasterTexutre);
     sf::Sprite* machine2 = new sf::Sprite(toasterTexutre);
     sf::Sprite* machine3 = new sf::Sprite(toasterTexutre);
     sf::Sprite* machine4 = new sf::Sprite(toasterTexutre);
     sf::Sprite* machine5 = new sf::Sprite(toasterTexutre);
 
-    machine1->setPosition({ 500, 0 });
-    machine2->setPosition({ 500, 100 });
-    machine3->setPosition({ 500, 200 });
-    machine4->setPosition({ 500, 300 });
-    machine5->setPosition({ 500, 400 });
+    machine1->setPosition({ 700, 0 });
+    machine2->setPosition({ 700, 115 });
+    machine3->setPosition({ 700, 230 });
+    machine4->setPosition({ 700, 345 });
+    machine5->setPosition({ 700, 460 });
 
     machineVector.push_back(*machine1);
     machineVector.push_back(*machine2);
