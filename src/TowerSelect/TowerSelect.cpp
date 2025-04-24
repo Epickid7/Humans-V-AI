@@ -153,7 +153,9 @@ bool TowerSelect::checkForTowerPlace(sf::RenderWindow& window, GridTile* gameBoa
             }
         }
     }
+    std::cout << "end of Towerselect" << std::endl;
     return false;
+   
 }
 
 int TowerSelect::getCurTower(void)

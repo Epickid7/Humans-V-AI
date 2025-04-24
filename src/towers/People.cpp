@@ -1,7 +1,7 @@
 #include "People.h"
 
 
-People::People() : Tower(0, 0, 10, 10, 2, 1, AttackType::PROJECTILE, getPeopleTexture(), 60)
+People::People() : Tower(0, 0, 10, 10, 2, 1, AttackType::PROJECTILE, peopleTexture, 60)
 {
 	peopleTexture.loadFromFile(ASSETS_PATH "/images/people.png");
 	brickTexture.loadFromFile(ASSETS_PATH "/images/brick.png");
@@ -24,7 +24,6 @@ People::People(People& p)
 	this->setPosition(p.getPosition());
 	this->texture = p.texture;
 	this->maxHealth = p.maxHealth;
-	this->peopleTexture = p.peopleTexture;
 	this->peopleTexture = p.peopleTexture;
 }
 

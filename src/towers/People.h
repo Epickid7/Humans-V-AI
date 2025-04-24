@@ -32,6 +32,6 @@ public:
 	void destroyTower(void);
 
 protected:
-	sf::Texture peopleTexture = sf::Texture(ASSETS_PATH "/images/people.png");
+	sf::Texture peopleTexture;
 	sf::Texture brickTexture;
 };
