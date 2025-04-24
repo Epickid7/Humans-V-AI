@@ -20,7 +20,7 @@
 int main()
 {
     // Create the main window
-    sf::RenderWindow window(sf::VideoMode({800, 600}), "SFML window");
+    sf::RenderWindow window(sf::VideoMode({800, 600}), "Humans v AI");
     window.setVerticalSyncEnabled(true);
     //set mouse to window position
     sf::Vector2f mouse = window.mapPixelToCoords(sf::Mouse::getPosition(window));
@@ -32,7 +32,9 @@ int main()
 
     // Create a graphical text to display
     TowerSelect selectMenu;
-   
+  
+
+
     // Create Player object to store game data
     Player player(300);
     const sf::Font font = Utilities::getAttributedFont(FontStyle::Heavy, "SF-Pro");
@@ -94,7 +96,38 @@ int main()
     // Start the game loop
 
     //clk.start();
+    // 
+    // Main Menu loop
+    // Process events
+    while (const std::optional event = window.pollEvent())
+    {
+        // Close window: exit
+        if (event->is<sf::Event::Closed>())
+            window.close();
+    }
+    // Clear screen
+    window.clear();
+    sf::Vector2u windowSize = window.getSize();
 
+    sf::Text title(font, "HUMANS VS. AI", 30U);
+    title.setPosition(sf::Vector2f());
+    sf::Text instruct(font, "This is a TOWER DEFENSE game. Earn money by placing banks,\n then use that money to buy other towers to defend your base\n from the evil AI-controlled robots. Fight for your survival...\n ONLY HIT ENTER OR THIS PROGRAM WILL CRASH. DO NOT CLICK THE SCREEN!!!", 15U);
+    instruct.setPosition(sf::Vector2f(100,200));
+    sf::Text game(font, "PRESS ENTER TO CONTINUE", 30U);
+    game.setPosition(sf::Vector2f(300,350));
+    bool menu = true;
+
+    while (!sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Enter) && window.isOpen())
+        {
+        // Update window size after maximizing
+        window.clear(sf::Color::Black); // set background to balck
+            window.draw(title); // draws the title
+            window.draw(instruct); // draws the instructions
+            window.draw(game); // draws the continuation instructions
+            window.display();
+        }
+       
+    // GAMEPLAY LOOP BEGINS HERE
     while (window.isOpen())
     {
         
@@ -105,7 +138,6 @@ int main()
             if (event->is<sf::Event::Closed>())
                 window.close();
         }
-
         // Clear screen
         window.clear();
         
@@ -143,7 +175,7 @@ int main()
 
         //Draw money
         sf::Text money(font, sf::String( std::to_string(player.getMoney())), 35);
-        money.setPosition(sf::Vector2f(0, 0 ));
+        money.setPosition(sf::Vector2f(0, 0));
         window.draw(money);
 
         //draw menu for choosing tower
