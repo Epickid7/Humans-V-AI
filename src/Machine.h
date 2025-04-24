@@ -1,10 +1,13 @@
+#pragma once
+
 #include "Character.h"
 #include "Tower.h"
 
 class Machine : public Character {
 protected:
+	// no damage variable, will use ability power
 	int payout;
-	double damage, movementSpeed;
+	double movementSpeed;
 	bool isInRange;
 
 public:
@@ -20,10 +23,9 @@ public:
 	}*/
 
 	Machine(int x, int y, double currentHP, double maxHP, double power, double speed, int type,
-		sf::Texture& texture, int newPayout, double newDamage, double newMoveSpeed, bool inRange) 
+		const sf::Texture& texture, int newPayout, double newDamage, double newMoveSpeed, bool inRange) 
 		: Character(x, y, currentHP, maxHP, power, speed, type, texture) {
 		payout = newPayout;
-		damage = newDamage;
 		movementSpeed = newMoveSpeed;
 		isInRange = inRange;
 	}
@@ -33,21 +35,15 @@ public:
 
 	// setters
 	void setPayout(int newPay);
-	void setDamage(double newDamage);
 	void setMovementSpeed(double newSpeed);
 	void setRange(bool newRange);
 
 	// getters
 	int getPayout();
-	double getDamage();
 	double getMovementSpeed();
 	bool getRange();
 
 	// member functions
-	virtual void useAbility(Tower& towerInGrid) = 0;
+	//virtual void useAbility(Tower& towerInGrid) = 0;
 	void moveLeft();
 };
-
-void Machine::moveLeft() {
-	move(sf::Vector2f(-1 * movementSpeed, 0));
-}
