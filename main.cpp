@@ -22,19 +22,23 @@
 int main()
 {
     // Create the main window
-    sf::RenderWindow window(sf::VideoMode({800, 600}), "SFML window");
+    sf::RenderWindow window(sf::VideoMode({800, 600}), "Humans v AI");
     window.setVerticalSyncEnabled(true);
     //set mouse to window position
     sf::Vector2f mouse = window.mapPixelToCoords(sf::Mouse::getPosition(window));
     
     sf::Clock clk;
 
+    //People p(0,0);
+
     //Maximize window
     ::ShowWindow(window.getNativeHandle(), SW_MAXIMIZE);
 
     // Create a graphical text to display
     TowerSelect selectMenu;
-   
+  
+
+
     // Create Player object to store game data
     Player player(300);
     const sf::Font font = Utilities::getAttributedFont(FontStyle::Heavy, "SF-Pro");
@@ -48,9 +52,38 @@ int main()
         { 67,120}));
 
 
-    sf::Texture bankTest(ASSETS_PATH "/images/bank.png");
-    sf::Sprite s(bankTest);
-    
+    sf::Texture bankText(ASSETS_PATH "/images/bank.png");
+
+    sf::Texture barricadeText(ASSETS_PATH "/images/barricade.png");
+
+    //sf::Texture bankTest(ASSETS_PATH "/images/bank.png");
+
+    //sf::Texture bankTest(ASSETS_PATH "/images/bank.png");
+
+    sf::Texture peopleText(ASSETS_PATH "/images/people.png");
+
+    //sf::Texture bankTest(ASSETS_PATH "/images/bank.png");
+
+    //sf::Texture bankTest(ASSETS_PATH "/images/bank.png");
+
+    //sf::Texture bankTest(ASSETS_PATH "/images/bank.png");
+
+    sf::Sprite bank(bankText);
+
+    sf::Sprite barricade(barricadeText);
+
+   //sf::Sprite s(bankTest);
+
+    //sf::Sprite s(bankTest);
+
+    sf::Sprite people(peopleText);
+
+    //sf::Sprite s(bankTest);
+
+    //sf::Sprite s(bankTest);
+
+    //sf::Sprite s(bankTest);
+   
 
     //test texture
     sf::Texture t(ASSETS_PATH "/images/grassTile.png",false, sf::IntRect({ 0,0 },
@@ -70,13 +103,16 @@ int main()
         }
     }
 
-    // entity vectors
-    vector<sf::Sprite> towerVector; // sprites, switch to towers
+
+    //vector of sprites
+    //will change to tower type
+    vector<sf::Sprite> towerVector;
     //vector<Tower> towerVector;
-    vector<Machine> machineVector; // machines
-    std::vector<Projectile> projectileVector; // projectiles
 
     Bank bank;
+
+    std::vector<Projectile> projectiles;
+
    
     sf::Music music(ASSETS_PATH "/music/Ultimate Battle.wav");
     music.setVolume(35.f);
@@ -88,15 +124,13 @@ int main()
     effect.play();
     sf::Music crunch(ASSETS_PATH "/music/cracker_munch.wav");
     crunch.setPitch(2.f);
-    crunch.play();
-
-    // test terminator
-    Terminator terminator = Terminator(200, 200);
+    crunch.play();*/
 
     // Start the game loop
 
     //clk.start();
 
+    // GAMEPLAY LOOP BEGINS HERE
     while (window.isOpen())
     {
         
@@ -107,7 +141,6 @@ int main()
             if (event->is<sf::Event::Closed>())
                 window.close();
         }
-
         // Clear screen
         window.clear();
         
@@ -130,12 +163,59 @@ int main()
                         mouse.y))) {
 
                         //test code for inserting tower
+                        switch (lastKeyPressed) {
+                        case 1:
+                            sprite = new sf::Sprite(bank);
+                            (*sprite).setPosition({ (*gameBoard[i][j]).getPosition().x, (*gameBoard[i][j]).getPosition().y });
+                            //(*sprite).setColor(sf::Color::White);
+                            towerVector.push_back(*sprite);
+                            break;
+                        case 2:
+                            sprite = new sf::Sprite(barricade);
+                            (*sprite).setPosition({ (*gameBoard[i][j]).getPosition().x, (*gameBoard[i][j]).getPosition().y });
+                            //(*sprite).setColor(sf::Color::White);
+                            towerVector.push_back(*sprite);
+                            break;
+                        case 3:
+                            //sprite = new sf::Sprite(bank);
+                            //(*sprite).setPosition({ (*gameBoard[i][j]).getPosition().x, (*gameBoard[i][j]).getPosition().y });
+                            ////(*sprite).setColor(sf::Color::White);
+                            //towerVector.push_back(*sprite);
+                            break;
+                        case 4:
+                            //sprite = new sf::Sprite(bank);
+                            //(*sprite).setPosition({ (*gameBoard[i][j]).getPosition().x, (*gameBoard[i][j]).getPosition().y });
+                            ////(*sprite).setColor(sf::Color::White);
+                            //towerVector.push_back(*sprite);
+                            break;
+                        case 5:
+                            sprite = new sf::Sprite(peopleText);
+                            (*sprite).setPosition({ (*gameBoard[i][j]).getPosition().x, (*gameBoard[i][j]).getPosition().y });
+                            //(*sprite).setColor(sf::Color::White);
+                            towerVector.push_back(*sprite);
+                            break;
+                        case 6:
+                            //sprite = new sf::Sprite(bank);
+                            //(*sprite).setPosition({ (*gameBoard[i][j]).getPosition().x, (*gameBoard[i][j]).getPosition().y });
+                            ////(*sprite).setColor(sf::Color::White);
+                            //towerVector.push_back(*sprite);
+
+                            break;
+                        case 7:
+                            //sprite = new sf::Sprite(bank);
+                            //(*sprite).setPosition({ (*gameBoard[i][j]).getPosition().x, (*gameBoard[i][j]).getPosition().y });
+                            ////(*sprite).setColor(sf::Color::White);
+                            //towerVector.push_back(*sprite);
+                            break;
+                        case 8:
+                            //sprite = new sf::Sprite(bank);
+                            //(*sprite).setPosition({ (*gameBoard[i][j]).getPosition().x, (*gameBoard[i][j]).getPosition().y });
+                            ////(*sprite).setColor(sf::Color::White);
+                            //towerVector.push_back(*sprite);
+                            break;
+                        }
+                        
                        
-                        //sprite.setPosition(sf::Vector2f(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y));
-                        sprite = new sf::Sprite(s);
-                        (*sprite).setPosition({ (*gameBoard[i][j]).getPosition().x, (*gameBoard[i][j]).getPosition().y });
-                        (*sprite).setColor(sf::Color::White);
-                        towerVector.push_back(*sprite);
                         
                        
                     }
@@ -145,20 +225,22 @@ int main()
 
         //Draw money
         sf::Text money(font, sf::String( std::to_string(player.getMoney())), 35);
-        money.setPosition(sf::Vector2f(0, 0 ));
+        money.setPosition(sf::Vector2f(0, 0));
         window.draw(money);
 
         //draw menu for choosing tower
         selectMenu.displayTowerList(window);
         selectMenu.checkForTowerSelect();
+        lastKeyPressed = selectMenu.getCurTower();
         //check if user is clicking a tile
-
+        //selectMenu.checkForTowerPlace(window, gameBoard, mouse, towerVector);
+       
         //check if user has necessary funds for selected tower
 
         
 
         mouse = window.mapPixelToCoords(sf::Mouse::getPosition(window));
-
+        
 
         for (int i = 0; i < ROW; i++) {
             for (int j = 0; j < COLUMN; j++) {
@@ -167,11 +249,11 @@ int main()
                 window.draw(*gameBoard[i][j]);
             }
         }
+       
         for (int i = 0; i < towerVector.size(); i++) {
             window.draw(towerVector.at(i));
         }
-
-        //std::cout << clk.getElapsedTime().asMilliseconds() << std::endl;
+        
 
         // testing terminator movement
         terminator.moveLeft();

@@ -19,7 +19,15 @@ public:
 
 	People(int x, int y);
 
+	People(People& p);
+
+	People & operator=(People & p);
+
+
+
 	void useAbility(std::vector<Projectile>& projs);
+
+	sf::Texture& getPeopleTexture(void);
 
 	void destroyTower(void);
 
