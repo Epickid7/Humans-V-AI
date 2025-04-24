@@ -88,6 +88,7 @@ int main()
     //test texture
     sf::Texture t(ASSETS_PATH "/images/grassTile.png",false, sf::IntRect({ 0,0 },
         { 67,120 }));
+    sf::Texture toasterTexutre(ASSETS_PATH "/images/toaster.png");
     sf::Sprite * sprite = new sf::Sprite(t);
     (*sprite).setColor(sf::Color::Transparent);
     
@@ -103,13 +104,31 @@ int main()
         }
     }
 
+    int lastKeyPressed = 0;
 
     //vector of sprites
     //will change to tower type
     vector<sf::Sprite> towerVector;
+    vector<sf::Sprite> machineVector;
     //vector<Tower> towerVector;
 
-    Bank bank;
+    sf::Sprite* machine1 = new sf::Sprite(toasterTexutre);
+    sf::Sprite* machine2 = new sf::Sprite(toasterTexutre);
+    sf::Sprite* machine3 = new sf::Sprite(toasterTexutre);
+    sf::Sprite* machine4 = new sf::Sprite(toasterTexutre);
+    sf::Sprite* machine5 = new sf::Sprite(toasterTexutre);
+
+    machine1->setPosition({ 500, 0 });
+    machine2->setPosition({ 500, 100 });
+    machine3->setPosition({ 500, 200 });
+    machine4->setPosition({ 500, 300 });
+    machine5->setPosition({ 500, 400 });
+
+    machineVector.push_back(*machine1);
+    machineVector.push_back(*machine2);
+    machineVector.push_back(*machine3);
+    machineVector.push_back(*machine4);
+    machineVector.push_back(*machine5);
 
     std::vector<Projectile> projectiles;
 
@@ -124,7 +143,7 @@ int main()
     effect.play();
     sf::Music crunch(ASSETS_PATH "/music/cracker_munch.wav");
     crunch.setPitch(2.f);
-    crunch.play();*/
+    crunch.play();
 
     // Start the game loop
 
@@ -147,8 +166,11 @@ int main()
         //get clock time for mob queue
         
 
-        //will spawn every ten seconds
-        if (clk.getElapsedTime().asMilliseconds() % 10000 == 0) {
+        //will spawn every five seconds
+
+        
+        if (clk.getElapsedTime().asMilliseconds() % 5000 == 0) {
+            
             //mobs.getMachineType();
         }
 
@@ -253,11 +275,14 @@ int main()
         for (int i = 0; i < towerVector.size(); i++) {
             window.draw(towerVector.at(i));
         }
-        
+        for (int i = 0; i < machineVector.size(); i++) {
+            machineVector.at(i).move({ -0.5, 0 });
+            window.draw(machineVector.at(i));
+        }
 
-        // testing terminator movement
-        terminator.moveLeft();
-        window.draw(terminator);
+        //// testing terminator movement
+        //terminator.moveLeft();
+        //window.draw(terminator);
 
         // Update the window
         window.display();

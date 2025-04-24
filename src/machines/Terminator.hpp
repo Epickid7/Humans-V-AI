@@ -18,7 +18,7 @@ private:
 
 public:
 	Terminator(double x, double y) : Machine(x, y, CURRENT_HP, MAX_HP, ABILITY_POWER, ABILITY_SPEED,
-		AttackType::MELEE, sf::Texture(), PAYOUT, MOVEMENT_SPEED, false) {
+		AttackType::MELEE, terminatorTexture, PAYOUT, 0, MOVEMENT_SPEED, false) {
 		terminatorTexture.loadFromFile(ASSETS_PATH "/images/terminator.png");
 	}
 

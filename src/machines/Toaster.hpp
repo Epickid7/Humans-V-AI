@@ -19,8 +19,8 @@ private:
 public:
 	// constructor
 	Toaster(double x, double y) : Machine(x, y, CURRENT_HP, MAX_HP, ABILITY_POWER, ABILITY_SPEED,
-		AttackType::MELEE, toasterTexture, PAYOUT, MOVEMENT_SPEED, false) {
-		toasterTexture.loadFromFile(ASSETS_PATH "/images/terminator.png");
+		AttackType::MELEE, toasterTexture, PAYOUT, 0, MOVEMENT_SPEED, false) {
+		toasterTexture.loadFromFile(ASSETS_PATH "/images/toaster.png");
 	}
 
 	/*Toaster(int x = 0, int y = 0, double current = 0, double max = 0, double power = 0, double speed = 0,
